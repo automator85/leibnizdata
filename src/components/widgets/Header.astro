@@ -50,7 +50,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-white dark:bg-dark',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
@@ -60,108 +60,310 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     class:list={[
       'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
       {
-        'md:flex md:justify-between': position !== 'center',
+        'lg:flex lg:justify-between': position !== 'center',
       },
       {
-        'md:grid md:grid-cols-3 md:items-center': position === 'center',
+        'lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center': position === 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
       },
     ]}
   >
-    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
+    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between lg:flex-none']}>
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center lg:hidden">
         <ToggleMenu />
       </div>
     </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-gray-800/60 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden z-40"></div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      id="mobile-menu"
+      class="items-center w-full lg:w-auto hidden lg:flex text-default fixed lg:relative inset-x-0 top-[57px] bottom-0 lg:top-auto bg-white dark:bg-dark lg:bg-transparent z-50"
       aria-label="Main navigation"
     >
-      <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
-      >
-        {
-          links.map(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown' : ''}>
-              {links?.length ? (
-                <>
-                  <button
-                    type="button"
-                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+      <div class="flex flex-col h-full">
+        <ul
+          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center h-[calc(100vh-8rem)] lg:h-auto overflow-y-auto lg:overflow-y-visible px-4 lg:px-0 pt-4 lg:pt-0"
+        >
+          {
+            links.map(({ text, href, links }) => (
+              <li class={links?.length ? 'dropdown' : ''}>
+                {links?.length ? (
+                  <>
+                    <button
+                      type="button"
+                      class="hover:text-primary dark:hover:text-white px-4 py-3 flex items-center justify-between w-full lg:w-auto hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 rounded-lg"
+                    >
+                      {text}
+                      <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 transition-transform duration-200" />
+                    </button>
+                    <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded-lg lg:absolute pl-4 lg:pl-0 hidden font-medium lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
+                      {links.map(({ text: text2, href: href2 }) => (
+                        <li>
+                          <a
+                            class:list={[
+                              'first:rounded-t-lg last:rounded-b-lg hover:bg-gray-100 dark:hover:bg-gray-800 py-2.5 px-5 block whitespace-no-wrap transition-colors duration-200',
+                              { 'bg-primary/10 dark:bg-primary/20 text-primary dark:text-white': href2 === currentPath },
+                            ]}
+                            href={href2}
+                          >
+                            {text2}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <a
+                    class:list={[
+                      'hover:text-primary dark:hover:text-white px-4 py-3 flex items-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 rounded-lg',
+                      { 'bg-primary/10 dark:bg-primary/20 text-primary dark:text-white': href === currentPath },
+                    ]}
+                    href={href}
                   >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
-                  </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
-                    {links.map(({ text: text2, href: href2 }) => (
-                      <li>
-                        <a
-                          class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                            { 'aw-link-active': href2 === currentPath },
-                          ]}
-                          href={href2}
-                        >
-                          {text2}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <a
-                  class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
-                    { 'aw-link-active': href === currentPath },
-                  ]}
-                  href={href}
-                >
-                  {text}
-                </a>
-              )}
-            </li>
-          ))
-        }
-      </ul>
+                    {text}
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-auto px-4 pb-4 lg:hidden">
+          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6" />}
+        </div>
+      </div>
     </nav>
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end',
+        'hidden lg:flex lg:items-center lg:justify-end lg:flex-1 lg:gap-2',
       ]}
     >
-      <div class="items-center flex justify-between w-full md:w-auto">
-        <div class="flex">
-          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
-          {
-            showRssFeed && (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label="RSS Feed"
-                href={getAsset('/rss.xml')}
-              >
-                <Icon name="tabler:rss" class="w-5 h-5" />
-              </a>
-            )
-          }
-        </div>
+      <div class="flex items-center">
+        {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block" />}
         {
-          actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
-              {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
-              ))}
-            </span>
-          ) : (
-            ''
+          showRssFeed && (
+            <a
+              class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+              aria-label="RSS Feed"
+              href={getAsset('/rss.xml')}
+            >
+              <Icon name="tabler:rss" class="w-5 h-5" />
+            </a>
           )
         }
       </div>
+      {
+        actions?.length ? (
+          <span class="ml-2">
+            {actions.map((btnProps) => (
+              <Button {...btnProps} class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
+            ))}
+          </span>
+        ) : (
+          ''
+        )
+      }
     </div>
   </div>
 </header>
+
+<style>
+  .dropdown.show-mobile-dropdown .dropdown-menu {
+    display: block;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .show-mobile-dropdown .tabler\:chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .menu-opened {
+    overflow: hidden;
+  }
+
+  .menu-opened #mobile-menu {
+    display: block;
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .menu-opened #menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Active state styles */
+  .dropdown button:active,
+  a:active {
+    transform: scale(0.98);
+  }
+
+  /* Hover effect for desktop */
+  @media (min-width: 1024px) {
+    .dropdown button:hover .tabler\:chevron-down {
+      transform: rotate(180deg);
+    }
+  }
+</style>
+
+<script>
+  class MobileMenu {
+    menuButton: HTMLElement | null;
+    mobileMenu: HTMLElement | null;
+    menuOverlay: HTMLElement | null;
+    boundHandleKeydown: (e: KeyboardEvent) => void;
+
+    constructor() {
+      this.menuButton = null;
+      this.mobileMenu = null;
+      this.menuOverlay = null;
+      this.boundHandleKeydown = this.handleKeydown.bind(this);
+      this.init();
+    }
+
+    init() {
+      this.menuButton = document.querySelector('[data-aw-toggle-menu]');
+      this.mobileMenu = document.getElementById('mobile-menu');
+      this.menuOverlay = document.getElementById('menu-overlay');
+
+      if (!this.menuButton || !this.mobileMenu || !this.menuOverlay) {
+        return;
+      }
+
+      this.setupEventListeners();
+      this.resetMenu();
+    }
+
+    resetMenu = () => {
+      if (!this.menuButton || !this.mobileMenu) return;
+
+      document.documentElement.classList.remove('menu-opened');
+      this.menuButton.classList.remove('expanded');
+      this.mobileMenu.classList.add('hidden');
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('show-mobile-dropdown');
+      });
+    };
+
+    toggleMenu = (e: Event) => {
+      if (!this.menuButton || !this.mobileMenu) return;
+
+      e.stopPropagation();
+      const isOpen = document.documentElement.classList.contains('menu-opened');
+      
+      if (isOpen) {
+        this.resetMenu();
+      } else {
+        document.documentElement.classList.add('menu-opened');
+        this.menuButton.classList.add('expanded');
+        this.mobileMenu.classList.remove('hidden');
+      }
+    };
+
+    handleDropdownClick = (e: Event) => {
+      e.stopPropagation();
+      const button = e.currentTarget as HTMLElement;
+      const dropdown = button.closest('.dropdown');
+      if (!dropdown) return;
+      
+      const wasOpen = dropdown.classList.contains('show-mobile-dropdown');
+      
+      document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('show-mobile-dropdown');
+      });
+
+      if (!wasOpen) {
+        dropdown.classList.add('show-mobile-dropdown');
+      }
+    };
+
+    handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        this.resetMenu();
+      }
+    };
+
+    setupEventListeners() {
+      if (!this.menuButton || !this.mobileMenu || !this.menuOverlay) return;
+
+      // Remove old event listeners by cloning elements
+      this.menuButton.replaceWith(this.menuButton.cloneNode(true));
+      this.menuButton = document.querySelector('[data-aw-toggle-menu]');
+
+      document.querySelectorAll('.dropdown button').forEach(button => {
+        button.replaceWith(button.cloneNode(true));
+      });
+
+      // Add new event listeners
+      this.menuButton?.addEventListener('click', this.toggleMenu);
+      this.menuOverlay?.addEventListener('click', this.resetMenu);
+
+      document.querySelectorAll('.dropdown button').forEach(button => {
+        button.addEventListener('click', this.handleDropdownClick);
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', this.resetMenu);
+      });
+
+      document.addEventListener('keydown', this.boundHandleKeydown);
+    }
+
+    cleanup() {
+      if (!this.menuButton || !this.menuOverlay) return;
+
+      this.menuButton.removeEventListener('click', this.toggleMenu);
+      this.menuOverlay.removeEventListener('click', this.resetMenu);
+      document.removeEventListener('keydown', this.boundHandleKeydown);
+
+      document.querySelectorAll('.dropdown button').forEach(button => {
+        button.removeEventListener('click', this.handleDropdownClick);
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.removeEventListener('click', this.resetMenu);
+      });
+    }
+  }
+
+  let mobileMenu: MobileMenu | null = null;
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', () => {
+    if (mobileMenu) {
+      mobileMenu.cleanup();
+    }
+    mobileMenu = new MobileMenu();
+  });
+
+  // Cleanup before navigation
+  document.addEventListener('astro:before-swap', () => {
+    if (mobileMenu) {
+      mobileMenu.cleanup();
+      mobileMenu = null;
+    }
+  });
+</script>
