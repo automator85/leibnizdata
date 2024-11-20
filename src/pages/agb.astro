@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Allgemeine Geschäftsbedingungen - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Allgemeine Geschäftsbedingungen
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Stand: Januar 2024
+    </Fragment>
+  </Hero>
+
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">1. Geltungsbereich</h2>
+      <p class="mb-4">Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") gelten für alle Verträge zwischen der Leibniz Data GmbH (nachfolgend "Leibniz Data") und ihren Kunden (nachfolgend "Auftraggeber") über die Erbringung von Dienstleistungen im Bereich Datenanalyse, Softwareentwicklung und damit verbundene Leistungen.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">2. Vertragsschluss</h2>
+      <p class="mb-4">Die Angebote von Leibniz Data sind freibleibend. Ein Vertrag kommt erst durch schriftliche Auftragsbestätigung oder Beginn der Leistungserbringung durch Leibniz Data zustande.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">3. Leistungsumfang</h2>
+      <p class="mb-4">Der konkrete Leistungsumfang ergibt sich aus der jeweiligen Leistungsbeschreibung bzw. dem individuellen Angebot. Leibniz Data ist berechtigt, die vereinbarten Leistungen durch qualifizierte Mitarbeiter oder Subunternehmer erbringen zu lassen.</p>
+      <p class="mb-4">Änderungen des Leistungsumfangs bedürfen der schriftlichen Vereinbarung.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">4. Mitwirkungspflichten des Auftraggebers</h2>
+      <p class="mb-4">Der Auftraggeber wird Leibniz Data bei der Erbringung der vereinbarten Leistungen in angemessenem Umfang unterstützen. Dazu gehört insbesondere die rechtzeitige Zurverfügungstellung aller für die Leistungserbringung erforderlichen Informationen und Unterlagen.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">5. Vergütung und Zahlungsbedingungen</h2>
+      <p class="mb-4">Die Vergütung richtet sich nach den vereinbarten Preisen. Alle Preise verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.</p>
+      <p class="mb-4">Rechnungen sind innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug zur Zahlung fällig.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">6. Gewährleistung</h2>
+      <p class="mb-4">Leibniz Data gewährleistet, dass die erbrachten Leistungen den anerkannten Regeln der Technik entsprechen und nicht mit Mängeln behaftet sind, die den Wert oder die Tauglichkeit zu dem gewöhnlichen oder nach dem Vertrag vorausgesetzten Gebrauch aufheben oder mindern.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">7. Haftung</h2>
+      <p class="mb-4">Leibniz Data haftet für Schäden, die durch vorsätzliches oder grob fahrlässiges Verhalten verursacht wurden, sowie bei der Verletzung wesentlicher Vertragspflichten.</p>
+      <p class="mb-4">Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen, soweit es sich nicht um die Verletzung einer vertragswesentlichen Pflicht oder um Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit handelt.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">8. Vertraulichkeit und Datenschutz</h2>
+      <p class="mb-4">Die Vertragsparteien verpflichten sich, alle im Rahmen der Zusammenarbeit erhaltenen Informationen vertraulich zu behandeln. Diese Verpflichtung gilt auch nach Beendigung des Vertragsverhältnisses.</p>
+      <p class="mb-4">Die Verarbeitung personenbezogener Daten erfolgt unter Beachtung der geltenden datenschutzrechtlichen Bestimmungen.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">9. Urheberrechte und Nutzungsrechte</h2>
+      <p class="mb-4">Alle im Rahmen der Leistungserbringung entstehenden Urheberrechte verbleiben bei Leibniz Data. Der Auftraggeber erhält das nicht-ausschließliche, dauerhafte Recht, die Arbeitsergebnisse im vereinbarten Umfang zu nutzen.</p>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">10. Schlussbestimmungen</h2>
+      <p class="mb-4">Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.</p>
+      <p class="mb-4">Erfüllungsort und ausschließlicher Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit diesem Vertrag ist Berlin, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.</p>
+      <p class="mb-4">Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, so berührt dies die Wirksamkeit der übrigen Bestimmungen nicht.</p>
+    </div>
+  </section>
+</Layout>

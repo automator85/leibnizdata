@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Lösungen für den Mittelstand - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Digitale Transformation für den <span class="text-accent dark:text-white highlight">Mittelstand</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Wir unterstützen mittelständische Unternehmen bei der digitalen Transformation mit maßgeschneiderten Lösungen für Datenanalyse und Prozessoptimierung. Profitieren Sie von unserer Expertise für nachhaltiges Wachstum.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Ihre Vorteile"
+    subtitle="Maßgeschneiderte Lösungen für mittelständische Unternehmen"
+    items={[
+      {
+        title: 'Prozessoptimierung',
+        description:
+          'Digitalisierung und Automatisierung von Geschäftsprozessen für mehr Effizienz und Produktivität.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Datenanalyse',
+        description:
+          'Fundierte Geschäftsentscheidungen durch moderne Business Intelligence und Analytics-Lösungen.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Individuelle Software',
+        description:
+          'Entwicklung passgenauer Softwarelösungen für Ihre spezifischen Anforderungen.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Digitale Integration',
+        description:
+          'Nahtlose Integration neuer Technologien in bestehende Systeme und Prozesse.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Skalierbare Lösungen',
+        description:
+          'Zukunftssichere Technologien, die mit Ihrem Unternehmen mitwachsen.',
+        icon: 'tabler:chart-arrows-vertical',
+      },
+      {
+        title: 'Kompetente Beratung',
+        description:
+          'Persönliche Betreuung und strategische Beratung für Ihre Digitalisierungsprojekte.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Ihr Weg zur digitalen Transformation"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Analyse & Strategie</span>',
+        description:
+          'Wir analysieren Ihre bestehenden Prozesse und entwickeln eine passgenaue Digitalisierungsstrategie.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Konzeption</span>',
+        description:
+          'Gemeinsam erarbeiten wir konkrete Lösungsansätze und definieren messbare Ziele.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Umsetzung</span>',
+        description:
+          'Schrittweise Implementierung der Lösungen mit minimalem Eingriff in Ihre laufenden Geschäftsprozesse.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Optimierung</span>',
+        description:
+          'Kontinuierliche Verbesserung und Anpassung an sich ändernde Anforderungen.',
+        icon: 'tabler:chart-arrows',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Digitalisierung als Wachstumstreiber"
+    subtitle="Stärken Sie Ihre Wettbewerbsfähigkeit durch moderne Technologien"
+    items={[
+      {
+        title: 'Effizienzsteigerung',
+        description:
+          'Automatisierte Prozesse und digitale Workflows reduzieren manuelle Aufwände und steigern die Produktivität.',
+      },
+      {
+        title: 'Bessere Entscheidungen',
+        description:
+          'Datenbasierte Einblicke in Ihre Geschäftsprozesse ermöglichen fundierte strategische Entscheidungen.',
+      },
+      {
+        title: 'Zukunftssicherheit',
+        description:
+          'Moderne Technologielösungen machen Ihr Unternehmen fit für die digitale Zukunft.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Digitale Transformation Mittelstand',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Antworten auf wichtige Fragen zur digitalen Transformation"
+    items={[
+      {
+        title: 'Wie lange dauert ein typisches Digitalisierungsprojekt?',
+        description:
+          'Die Projektdauer hängt von Umfang und Komplexität ab. Wir setzen auf einen schrittweisen Ansatz, bei dem erste Ergebnisse bereits nach wenigen Monaten sichtbar sind.',
+      },
+      {
+        title: 'Wie wird die Datensicherheit gewährleistet?',
+        description:
+          'Datensicherheit hat für uns höchste Priorität. Wir setzen modernste Sicherheitsstandards ein und achten auf die Einhaltung aller relevanten Datenschutzbestimmungen.',
+      },
+      {
+        title: 'Wie werden Mitarbeiter eingebunden?',
+        description:
+          'Wir legen großen Wert auf Change Management und Mitarbeiterschulung. Durch frühzeitige Einbindung und umfassende Schulungen stellen wir eine hohe Akzeptanz sicher.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Beratungsgespräch vereinbaren',
+        href: '/kontakt',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Starten Sie jetzt Ihre digitale Transformation
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihr Unternehmen zukunftsfähig machen. Vereinbaren Sie ein kostenloses Erstgespräch mit unseren Experten.
+    </Fragment>
+  </CallToAction>
+</Layout>

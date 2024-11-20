@@ -1,0 +1,142 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Über uns - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Innovation durch <span class="text-accent dark:text-white highlight">Datenexpertise</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Als Berliner Unternehmen verbinden wir technische Innovation mit praktischer Expertise. Unser Team aus erfahrenen Entwicklern und Datenanalysten arbeitet leidenschaftlich daran, unseren Kunden durch datengetriebene Lösungen einen echten Mehrwert zu bieten.
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Unsere Geschichte"
+    subtitle="Leibniz Data wurde mit der Vision gegründet, Unternehmen durch innovative Technologielösungen und datengetriebene Entscheidungen zum Erfolg zu führen. Benannt nach dem Universalgelehrten Gottfried Wilhelm Leibniz, verkörpern wir seinen Geist der Innovation und des systematischen Denkens in unserer täglichen Arbeit."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    title="Unsere Werte"
+    subtitle="Was uns antreibt und wie wir arbeiten"
+    items={[
+      {
+        title: 'Innovation',
+        description:
+          'Wir setzen auf modernste Technologien und entwickeln ständig neue Lösungsansätze für die Herausforderungen unserer Kunden.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Qualität',
+        description:
+          'Höchste Qualitätsstandards und kontinuierliche Verbesserung sind fest in unserer Unternehmens-DNA verankert.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Transparenz',
+        description:
+          'Offene Kommunikation und transparente Prozesse schaffen Vertrauen und ermöglichen eine erfolgreiche Zusammenarbeit.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Nachhaltigkeit',
+        description:
+          'Wir entwickeln Lösungen, die nicht nur heute funktionieren, sondern auch für die Zukunft ausgelegt sind.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Partnerschaft',
+        description:
+          'Wir verstehen uns als langfristiger Partner unserer Kunden und arbeiten gemeinsam an ihrem Erfolg.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Expertise',
+        description:
+          'Unser Team vereint jahrelange Erfahrung in Softwareentwicklung und Datenanalyse mit kontinuierlicher Weiterbildung.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Zufriedene Kunden', amount: '50+' },
+      { title: 'Jahre Erfahrung', amount: '5+' },
+      { title: 'Team-Mitglieder', amount: '20+' },
+      { title: 'Erfolgreiche Projekte', amount: '100+' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Unser Team"
+    subtitle="Bei Leibniz Data arbeiten Experten aus verschiedenen Bereichen Hand in Hand. Von erfahrenen Softwareentwicklern über Datenanalysten bis hin zu Projektmanagern - unser diverses Team bringt die perfekte Mischung aus technischer Expertise und Branchenerfahrung mit."
+    items={[
+      {
+        title: 'Softwareentwicklung',
+        description: 'Erfahrene Entwickler mit Expertise in modernsten Technologien',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Datenanalyse',
+        description: 'Spezialisten für komplexe Datenanalysen und Business Intelligence',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Projektmanagement',
+        description: 'Zertifizierte Projektmanager für reibungslose Projektabwicklung',
+        icon: 'tabler:target',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontaktieren Sie uns',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Lassen Sie uns gemeinsam Ihr nächstes Projekt realisieren
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Profitieren Sie von unserer Expertise in Datenanalyse und Softwareentwicklung. Wir freuen uns darauf, Sie kennenzulernen und Ihre Visionen in die Realität umzusetzen.
+    </Fragment>
+  </CallToAction>
+</Layout>

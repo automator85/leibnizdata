@@ -1,0 +1,29 @@
+---
+const ANALYTICS = {
+  vendors: {
+    googleAnalytics: {
+      id: undefined, // Set your Google Analytics ID here if needed
+      partytown: true,
+    },
+  },
+};
+---
+
+{
+  ANALYTICS?.vendors?.googleAnalytics?.id ? (
+    <Fragment>
+      <script
+        type="text/partytown"
+        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.vendors.googleAnalytics.id}`}
+      ></script>
+      <script type="text/partytown" define:vars={{ id: ANALYTICS.vendors.googleAnalytics.id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(...args) {
+          dataLayer.push(args);
+        }
+        gtag('js', new Date());
+        gtag('config', id);
+      </script>
+    </Fragment>
+  ) : null
+}

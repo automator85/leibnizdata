@@ -1,0 +1,135 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'FAQ - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Häufig gestellte <span class="text-accent dark:text-white highlight">Fragen</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Hier finden Sie Antworten auf die häufigsten Fragen zu unseren Dienstleistungen, Prozessen und Technologien. Falls Sie weitere Fragen haben, kontaktieren Sie uns gerne direkt.
+    </Fragment>
+  </Hero>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Allgemeine Fragen"
+    subtitle="Grundlegende Informationen zu unseren Dienstleistungen"
+    items={[
+      {
+        title: 'Was macht Leibniz Data einzigartig?',
+        description:
+          'Wir kombinieren tiefgreifende technische Expertise mit einem starken Fokus auf messbare Geschäftsergebnisse. Unser Team aus erfahrenen Entwicklern und Data Scientists arbeitet eng mit Ihnen zusammen, um maßgeschneiderte Lösungen zu entwickeln, die Ihr Unternehmen nachhaltig voranbringen.',
+      },
+      {
+        title: 'Wie läuft ein typisches Projekt ab?',
+        description:
+          'Jedes Projekt beginnt mit einer gründlichen Analyse Ihrer Anforderungen. Darauf aufbauend entwickeln wir ein maßgeschneidertes Konzept. Die Umsetzung erfolgt in agilen Sprints mit regelmäßigen Feedback-Schleifen. Nach dem Go-live bieten wir umfassenden Support und kontinuierliche Optimierung.',
+      },
+      {
+        title: 'Welche Branchen betreuen Sie?',
+        description:
+          'Wir haben Erfahrung in verschiedensten Branchen, darunter E-Commerce, Industrie, Finanzen, Logistik und Healthcare. Unsere Lösungen sind branchenunabhängig und werden individuell an Ihre spezifischen Anforderungen angepasst.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Technische Fragen"
+    subtitle="Details zu unseren technischen Lösungen"
+    items={[
+      {
+        title: 'Welche Technologien setzen Sie ein?',
+        description:
+          'Wir arbeiten mit modernsten Technologien wie Python, Java, Node.js für Backend-Entwicklung, React/Angular/Vue.js für Frontend-Entwicklung, sowie TensorFlow und PyTorch für KI/ML-Projekte. Die konkrete Technologieauswahl erfolgt basierend auf Ihren spezifischen Anforderungen.',
+      },
+      {
+        title: 'Wie gewährleisten Sie Datensicherheit?',
+        description:
+          'Datensicherheit hat bei uns höchste Priorität. Wir implementieren modernste Sicherheitsstandards, verschlüsseln sensible Daten und folgen Best Practices für sichere Softwareentwicklung. Alle unsere Lösungen entsprechen den geltenden Datenschutzbestimmungen.',
+      },
+      {
+        title: 'Bieten Sie Cloud-Lösungen an?',
+        description:
+          'Ja, wir entwickeln Cloud-native Anwendungen und unterstützen bei der Migration bestehender Systeme in die Cloud. Wir arbeiten mit allen großen Cloud-Anbietern (AWS, Azure, Google Cloud) und wählen die optimale Plattform für Ihre Anforderungen.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Kosten & Zeitrahmen"
+    subtitle="Informationen zu Projektabläufen und Investitionen"
+    items={[
+      {
+        title: 'Wie lange dauert ein typisches Projekt?',
+        description:
+          'Die Projektdauer hängt von Umfang und Komplexität ab. Kleine Projekte können in 2-3 Monaten realisiert werden, während umfangreichere Projekte 6-12 Monate oder länger dauern können. Wir definieren gemeinsam mit Ihnen einen realistischen Zeitplan.',
+      },
+      {
+        title: 'Wie werden die Kosten kalkuliert?',
+        description:
+          'Die Projektkosten basieren auf dem Umfang der Anforderungen, der technischen Komplexität und dem zeitlichen Rahmen. Wir erstellen für Sie ein detailliertes Angebot mit transparenter Kostenaufstellung und bieten verschiedene Preismodelle an.',
+      },
+      {
+        title: 'Gibt es laufende Kosten?',
+        description:
+          'Je nach Projekt können laufende Kosten für Hosting, Wartung und Support anfallen. Wir besprechen diese Aspekte transparent im Vorfeld und entwickeln ein passendes Betriebsmodell für Ihre Anforderungen.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Support & Wartung"
+    subtitle="Informationen zu unseren Support-Leistungen"
+    items={[
+      {
+        title: 'Welchen Support bieten Sie nach Projektabschluss?',
+        description:
+          'Wir bieten verschiedene Support-Level an, von der grundlegenden Wartung bis zum 24/7 Enterprise Support. Dies umfasst technischen Support, Fehlerbehebung, Updates und kontinuierliche Optimierung.',
+      },
+      {
+        title: 'Wie werden Updates und Wartung durchgeführt?',
+        description:
+          'Updates und Wartungsarbeiten werden so geplant, dass sie den laufenden Betrieb minimal beeinträchtigen. Kritische Sicherheitsupdates werden prioritär behandelt. Wir informieren Sie proaktiv über anstehende Wartungsarbeiten.',
+      },
+      {
+        title: 'Bieten Sie Schulungen an?',
+        description:
+          'Ja, wir bieten umfassende Schulungen für Ihre Mitarbeiter an, damit diese die implementierten Lösungen optimal nutzen können. Die Schulungen werden auf Ihre spezifischen Bedürfnisse zugeschnitten.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakt aufnehmen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Noch Fragen?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Unser Team steht Ihnen für weitere Fragen gerne zur Verfügung. Kontaktieren Sie uns für ein persönliches Gespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>

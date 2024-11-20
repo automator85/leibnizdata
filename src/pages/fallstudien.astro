@@ -1,0 +1,196 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Fallstudien - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Unsere <span class="text-accent dark:text-white highlight">Fallstudien</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Detaillierte Einblicke in erfolgreiche Kundenprojekte. Erfahren Sie, wie wir konkrete Herausforderungen gemeistert und messbare Ergebnisse erzielt haben.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="E-Commerce Optimierung"
+    subtitle="KI-gestütztes Recommendation System"
+    items={[
+      {
+        title: 'Ausgangssituation',
+        description:
+          'Ein führender Online-Händler suchte nach Möglichkeiten, die Conversion-Rate zu steigern und das Einkaufserlebnis zu personalisieren.',
+      },
+      {
+        title: 'Lösung',
+        description:
+          'Implementierung eines KI-basierten Recommendation Systems mit Echtzeit-Personalisierung und A/B-Testing-Funktionalität.',
+      },
+      {
+        title: 'Ergebnisse',
+        description:
+          '35% Steigerung der Conversion-Rate, 28% höherer durchschnittlicher Warenkorb, 42% verbesserte Kundenzufriedenheit.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
+      alt: 'E-Commerce Optimization',
+    }}
+  />
+
+  <Content
+    title="Prozessautomatisierung Finanzsektor"
+    subtitle="Automatisierte Dokumentenverarbeitung"
+    items={[
+      {
+        title: 'Herausforderung',
+        description:
+          'Ein Finanzinstitut kämpfte mit der manuellen Verarbeitung tausender Dokumente, was zu langen Bearbeitungszeiten und hohen Kosten führte.',
+      },
+      {
+        title: 'Implementierung',
+        description:
+          'Entwicklung einer KI-gestützten Lösung zur automatischen Dokumentenerkennung, -klassifizierung und -verarbeitung.',
+      },
+      {
+        title: 'Resultate',
+        description:
+          '70% reduzierte Bearbeitungszeit, 85% Kostenersparnis, 99.9% Genauigkeit bei der Dokumentenklassifizierung.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Process Automation',
+    }}
+  />
+
+  <Content
+    isReversed
+    title="Industrie 4.0"
+    subtitle="IoT-basierte Produktionsoptimierung"
+    items={[
+      {
+        title: 'Ausgangslage',
+        description:
+          'Ein Produktionsunternehmen suchte nach Wegen, Ausfallzeiten zu reduzieren und die Produktionseffizienz zu steigern.',
+      },
+      {
+        title: 'Umsetzung',
+        description:
+          'Installation eines IoT-Sensor-Netzwerks und Entwicklung einer Predictive Maintenance Plattform mit Machine Learning.',
+      },
+      {
+        title: 'Erfolge',
+        description:
+          '45% weniger ungeplante Ausfallzeiten, 30% reduzierte Wartungskosten, 25% gesteigerte Gesamtanlageneffektivität.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1565515267706-59e0f1da3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Industrial IoT',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    title="Technische Details"
+    subtitle="Eingesetzte Technologien und Methoden"
+    columns={3}
+    items={[
+      {
+        title: 'E-Commerce Projekt',
+        description: `
+          - Python & TensorFlow
+          - Real-time Recommendation Engine
+          - A/B Testing Framework
+          - Elasticsearch
+        `,
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Dokumentenverarbeitung',
+        description: `
+          - OCR & Computer Vision
+          - Natural Language Processing
+          - Workflow Automation
+          - Secure Document Storage
+        `,
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'IoT Plattform',
+        description: `
+          - IoT Sensor Integration
+          - Real-time Data Processing
+          - Predictive Analytics
+          - Machine Learning Models
+        `,
+        icon: 'tabler:cpu',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Methodik & Vorgehen"
+    subtitle="Unser Ansatz für erfolgreiche Projekte"
+    items={[
+      {
+        title: 'Analyse & Konzeption',
+        description:
+          'Gründliche Analyse der Ausgangssituation und Entwicklung einer maßgeschneiderten Lösungsstrategie.',
+      },
+      {
+        title: 'Agile Entwicklung',
+        description:
+          'Iterative Entwicklung mit regelmäßigen Feedback-Schleifen und kontinuierlicher Optimierung.',
+      },
+      {
+        title: 'Messung & Optimierung',
+        description:
+          'Kontinuierliche Erfolgsmessung und datenbasierte Optimierung der implementierten Lösungen.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projekt anfragen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Mehr Referenzen',
+        href: '/referenzen',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für Ihr Erfolgsprojekt?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihre Herausforderungen angehen und messbare Erfolge erzielen. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>

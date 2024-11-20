@@ -1,0 +1,157 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Kontakt - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Kontaktieren Sie uns
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Haben Sie Fragen oder möchten Sie ein Projekt besprechen? Wir freuen uns darauf, von Ihnen zu hören.
+    </Fragment>
+  </Hero>
+
+  <!-- Contact Form Section *********** -->
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-8">
+    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 md:p-8">
+      <h2 class="text-2xl font-bold mb-4">Schreiben Sie uns</h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">
+        Füllen Sie das Formular aus, und wir melden uns innerhalb eines Werktages bei Ihnen.
+      </p>
+      <form class="space-y-6" action="#" method="POST">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100"
+            placeholder="Ihr Name"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">E-Mail *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100"
+            placeholder="ihre.email@beispiel.de"
+          />
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Telefon</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100"
+            placeholder="+49 123 4567890"
+          />
+        </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Betreff</label>
+          <select
+            id="subject"
+            name="subject"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100"
+          >
+            <option value="allgemein">Allgemeine Anfrage</option>
+            <option value="beratung">Beratungsgespräch</option>
+            <option value="projekt">Projektanfrage</option>
+            <option value="karriere">Karriere</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nachricht *</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="4"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-100"
+            placeholder="Ihre Nachricht an uns..."
+          ></textarea>
+        </div>
+        <div class="flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              id="privacy"
+              name="privacy"
+              type="checkbox"
+              required
+              class="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+            />
+          </div>
+          <div class="ml-3">
+            <label for="privacy" class="text-sm text-gray-600 dark:text-gray-400">
+              Mit dem Absenden stimme ich der Verarbeitung meiner Daten gemäß der
+              <a href="/datenschutz" class="text-primary-600 hover:underline">Datenschutzerklärung</a> zu. *
+            </label>
+          </div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition duration-150 ease-in-out"
+          >
+            Nachricht senden
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Weitere Kontaktmöglichkeiten"
+    subtitle="Sie erreichen uns auch auf folgenden Wegen"
+    columns={3}
+    items={[
+      {
+        title: 'Büro Berlin',
+        description: `Musterstraße 123<br>10115 Berlin<br>Deutschland`,
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Kontaktdaten',
+        description: `Tel: +49 30 1234567<br>E-Mail: kontakt@leibniz-data.de`,
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Geschäftszeiten',
+        description: `Mo-Fr: 9:00 - 18:00 Uhr<br>Sa-So: geschlossen`,
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- Google Maps Embed -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-8">
+    <div class="bg-gray-100 dark:bg-slate-800 rounded-lg shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.6324391252257!2d13.384513776680424!3d52.51979637206645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBerlin%20Mitte!5e0!3m2!1sde!2sde!4v1709432943800!5m2!1sde!2sde"
+        width="100%"
+        height="450"
+        style="border:0;"
+        loading="lazy"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+  </div>
+
+</Layout>

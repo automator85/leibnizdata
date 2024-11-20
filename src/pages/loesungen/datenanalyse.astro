@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Datenanalyse & Business Intelligence - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Verwandeln Sie Ihre Daten in <span class="text-accent dark:text-white highlight">wertvolle Erkenntnisse</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Mit unseren maßgeschneiderten Datenanalyse-Lösungen helfen wir Ihnen, fundierte Geschäftsentscheidungen zu treffen und Ihre Prozesse zu optimieren.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Ganzheitliche Datenanalyse"
+    subtitle="Wir bieten umfassende Analyselösungen für Ihr Unternehmen"
+    items={[
+      {
+        title: 'Predictive Analytics',
+        description:
+          'Erkennen Sie Trends und Muster in Ihren Daten, um zukünftige Entwicklungen vorherzusagen und proaktiv zu handeln.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Business Intelligence',
+        description:
+          'Visualisieren Sie Ihre Geschäftsdaten in übersichtlichen Dashboards für schnelle und fundierte Entscheidungen.',
+        icon: 'tabler:presentation-analytics',
+      },
+      {
+        title: 'Data Mining',
+        description:
+          'Entdecken Sie verborgene Zusammenhänge in großen Datenmengen und nutzen Sie diese für Ihren Geschäftserfolg.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Prozessoptimierung',
+        description:
+          'Identifizieren Sie Verbesserungspotenziale in Ihren Geschäftsprozessen durch datengestützte Analysen.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Reporting & KPIs',
+        description:
+          'Erstellen Sie automatisierte Reports und überwachen Sie wichtige Leistungskennzahlen in Echtzeit.',
+        icon: 'tabler:report-analytics',
+      },
+      {
+        title: 'Datenintegration',
+        description:
+          'Vereinen Sie Daten aus verschiedenen Quellen zu einer einheitlichen Datenbasis für ganzheitliche Analysen.',
+        icon: 'tabler:database-import',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Unser Analyseprozess"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Datenerfassung</span>',
+        description:
+          'Wir identifizieren relevante Datenquellen und entwickeln eine Strategie zur effizienten Datensammlung.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Datenaufbereitung</span>',
+        description:
+          'Die gesammelten Daten werden bereinigt, strukturiert und für die Analyse vorbereitet.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Analyse & Auswertung</span>',
+        description:
+          'Mittels fortschrittlicher Analysemethoden gewinnen wir wertvolle Erkenntnisse aus Ihren Daten.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Visualisierung & Reporting</span>',
+        description:
+          'Die Ergebnisse werden in übersichtlichen Dashboards und Reports aufbereitet.',
+        icon: 'tabler:presentation',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Finden Sie Antworten auf die wichtigsten Fragen zur Datenanalyse"
+    items={[
+      {
+        title: 'Welche Arten von Daten können Sie analysieren?',
+        description:
+          'Wir analysieren verschiedenste Datentypen: von Geschäftsdaten über Kundenverhalten bis hin zu IoT-Daten. Unsere Experten wählen die passenden Analysemethoden für Ihre spezifischen Daten.',
+      },
+      {
+        title: 'Wie lange dauert ein typisches Analyseprojekt?',
+        description:
+          'Die Projektdauer hängt von Umfang und Komplexität ab. Kleine Projekte können in wenigen Wochen abgeschlossen sein, während umfangreiche Analysen mehrere Monate in Anspruch nehmen können.',
+      },
+      {
+        title: 'Wie sicher sind unsere Daten bei Ihnen?',
+        description:
+          'Datensicherheit hat bei uns höchste Priorität. Wir arbeiten nach strengen Sicherheitsstandards und gewährleisten die Einhaltung aller relevanten Datenschutzbestimmungen.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kostenlose Erstberatung',
+        href: '/kontakt',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für datengetriebene Entscheidungen?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam das Potenzial Ihrer Daten erschließen. Vereinbaren Sie jetzt ein kostenloses Erstgespräch mit unseren Experten.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,162 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Referenzen - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Unsere <span class="text-accent dark:text-white highlight">Erfolgsgeschichten</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Entdecken Sie, wie wir unseren Kunden durch innovative Technologielösungen zu messbarem Erfolg verhelfen. Unsere Referenzen zeigen konkrete Beispiele erfolgreicher Digitalisierungsprojekte aus verschiedenen Branchen.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="cases"
+    title="Erfolgreiche Projekte"
+    subtitle="Einblicke in unsere Arbeit"
+    items={[
+      {
+        title: 'E-Commerce Optimierung',
+        description:
+          'Entwicklung eines KI-gestützten Recommendation Systems für einen führenden Online-Händler. Steigerung der Conversion-Rate um 35%.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Prozessautomatisierung',
+        description:
+          'Implementierung einer automatisierten Dokumentenverarbeitung für ein Finanzinstitut. Reduzierung der Bearbeitungszeit um 70%.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Datenanalyse-Platform',
+        description:
+          'Entwicklung einer zentralen BI-Plattform für ein Industrieunternehmen. Echtzeitanalyse von Produktionsdaten aus 12 Standorten.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Mobile App',
+        description:
+          'Native iOS/Android App für einen Mobilitätsdienstleister. Über 100.000 Downloads im ersten Jahr.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Cloud Migration',
+        description:
+          'Migration der Legacy-Systeme eines Mittelständlers in die Cloud. Kosteneinsparung von 45% bei gesteigerter Performance.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'IoT-Plattform',
+        description:
+          'Entwicklung einer IoT-Plattform zur Überwachung von Industrieanlagen. Predictive Maintenance für über 1.000 Sensoren.',
+        icon: 'tabler:cpu',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Branchenübergreifende Expertise"
+    subtitle="Unsere Erfahrung in verschiedenen Sektoren"
+    items={[
+      {
+        title: 'Industrie & Produktion',
+        description:
+          'Optimierung von Produktionsprozessen durch intelligente Datenanalyse und Automatisierung.',
+      },
+      {
+        title: 'Handel & E-Commerce',
+        description:
+          'Digitale Transformation von Handelsprozessen und Implementierung von Online-Strategien.',
+      },
+      {
+        title: 'Finanzdienstleistungen',
+        description:
+          'Entwicklung sicherer und compliance-konformer Softwarelösungen für den Finanzsektor.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Branchenexpertise',
+    }}
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Das sagen unsere Kunden"
+    subtitle="Erfahrungsberichte unserer Kunden"
+    testimonials={[
+      {
+        name: 'Dr. Michael Schmidt',
+        job: 'CTO, TechCorp GmbH',
+        image: {
+          src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3',
+          alt: 'Dr. Michael Schmidt',
+        },
+        testimonial: 'Die Zusammenarbeit mit Leibniz Data war von Anfang an professionell und zielgerichtet. Das Team hat unsere Anforderungen perfekt verstanden und eine Lösung entwickelt, die unsere Erwartungen übertroffen hat.',
+      },
+      {
+        name: 'Sarah Weber',
+        job: 'Head of Digital, E-Shop24',
+        image: {
+          src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3',
+          alt: 'Sarah Weber',
+        },
+        testimonial: 'Durch die KI-basierte Recommendation Engine von Leibniz Data konnten wir unsere Conversion Rate deutlich steigern. Die Implementierung verlief reibungslos und der Support ist ausgezeichnet.',
+      },
+      {
+        name: 'Thomas Müller',
+        job: 'CEO, IndustrieWerk AG',
+        image: {
+          src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3',
+          alt: 'Thomas Müller',
+        },
+        testimonial: 'Die Digitalisierung unserer Produktionsprozesse war ein voller Erfolg. Leibniz Data hat uns dabei geholfen, unsere Effizienz zu steigern und neue Potenziale zu erschließen.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projekt anfragen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Mehr erfahren',
+        href: '/loesungen',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für Ihr eigenes Erfolgsprojekt?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihre digitale Transformation gestalten. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>

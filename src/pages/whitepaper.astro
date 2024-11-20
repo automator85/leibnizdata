@@ -1,0 +1,188 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Whitepaper - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Technische <span class="text-accent dark:text-white highlight">Whitepaper</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Fundierte Einblicke in aktuelle Technologietrends und Best Practices. Unsere Whitepaper bieten tiefgehende Analysen und praxisnahe Erkenntnisse aus unserer täglichen Arbeit.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    title="Aktuelle Whitepaper"
+    subtitle="Neueste Veröffentlichungen"
+    items={[
+      {
+        title: 'KI im Unternehmenseinsatz',
+        description:
+          'Eine praxisorientierte Analyse der Implementierung von KI-Lösungen in Unternehmen. Mit Fallbeispielen und Best Practices.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Cloud Native Architecture',
+        description:
+          'Moderne Architekturmuster für skalierbare Cloud-Anwendungen. Microservices, Containerisierung und DevOps.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Data Security & Privacy',
+        description:
+          'Sicherheitskonzepte und Datenschutz in der digitalen Transformation. DSGVO-konforme Implementierung.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'IoT & Edge Computing',
+        description:
+          'Strategien für die erfolgreiche Implementierung von IoT-Lösungen und Edge Computing in der Industrie.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Machine Learning Ops',
+        description:
+          'Best Practices für den Betrieb von Machine Learning Systemen in Produktion. MLOps und Monitoring.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'API Design & Security',
+        description:
+          'Moderne API-Architektur und Sicherheitskonzepte. REST, GraphQL und API Gateway Patterns.',
+        icon: 'tabler:api',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Technologie Deep Dives"
+    subtitle="Technische Analysen und Best Practices"
+    items={[
+      {
+        title: 'Architektur & Design',
+        description:
+          'Tiefgehende Analysen moderner Architekturmuster und Design-Prinzipien für skalierbare Systeme.',
+      },
+      {
+        title: 'Security & Compliance',
+        description:
+          'Detaillierte Betrachtung von Sicherheitskonzepten und Compliance-Anforderungen in der Softwareentwicklung.',
+      },
+      {
+        title: 'Performance & Skalierung',
+        description:
+          'Best Practices für die Optimierung und Skalierung von Hochlast-Systemen und Datenbanken.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Technical Deep Dives',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features
+    title="Whitepaper Kategorien"
+    subtitle="Thematische Schwerpunkte unserer Publikationen"
+    columns={3}
+    items={[
+      {
+        title: 'Künstliche Intelligenz',
+        description: `
+          - Machine Learning in der Praxis
+          - Natural Language Processing
+          - Computer Vision
+          - KI-Strategien
+        `,
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Cloud & Infrastructure',
+        description: `
+          - Cloud Native Architecture
+          - Containerisierung
+          - Microservices
+          - DevOps Practices
+        `,
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Data & Analytics',
+        description: `
+          - Big Data Processing
+          - Real-time Analytics
+          - Data Warehousing
+          - Business Intelligence
+        `,
+        icon: 'tabler:chart-dots',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Forschung & Innovation"
+    subtitle="Aktuelle Forschungsschwerpunkte"
+    items={[
+      {
+        title: 'Aktuelle Forschungsprojekte',
+        description:
+          'Einblicke in unsere laufenden Forschungsaktivitäten und Innovationsprojekte.',
+      },
+      {
+        title: 'Technologie-Trends',
+        description:
+          'Analyse aktueller Technologietrends und deren Bedeutung für Unternehmen.',
+      },
+      {
+        title: 'Kooperationen',
+        description:
+          'Zusammenarbeit mit Forschungseinrichtungen und Technologiepartnern.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Whitepaper herunterladen',
+        href: '#',
+        icon: 'tabler:download',
+      },
+      {
+        text: 'Newsletter abonnieren',
+        href: '#',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bleiben Sie auf dem Laufenden
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Abonnieren Sie unseren Newsletter, um über neue Whitepaper und Technologie-Insights informiert zu werden.
+    </Fragment>
+  </CallToAction>
+</Layout>

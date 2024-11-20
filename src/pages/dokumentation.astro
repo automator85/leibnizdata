@@ -1,0 +1,199 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Dokumentation - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Technische <span class="text-accent dark:text-white highlight">Dokumentation</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Umfassende technische Dokumentation unserer Lösungen und APIs. Hier finden Entwickler und technische Teams alle notwendigen Informationen für die Integration und Nutzung unserer Systeme.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="docs"
+    title="Dokumentationsbereiche"
+    subtitle="Übersicht unserer technischen Dokumentation"
+    items={[
+      {
+        title: 'API Dokumentation',
+        description:
+          'Detaillierte Beschreibung unserer REST APIs, Endpoints, Authentifizierung und Beispiele für verschiedene Programmiersprachen.',
+        icon: 'tabler:api',
+      },
+      {
+        title: 'Integration Guides',
+        description:
+          'Schritt-für-Schritt Anleitungen zur Integration unserer Lösungen in bestehende Systeme und Anwendungen.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'SDK Dokumentation',
+        description:
+          'Technische Dokumentation unserer SDKs für verschiedene Programmiersprachen und Plattformen.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Best Practices',
+        description:
+          'Empfehlungen und Best Practices für die optimale Nutzung unserer Systeme und Implementierung von Features.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Beispiele & Tutorials',
+        description:
+          'Praktische Codebeispiele und Tutorials für häufige Anwendungsfälle und Implementierungsszenarien.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Release Notes',
+        description:
+          'Detaillierte Informationen zu Updates, neuen Features und Änderungen in unseren Systemen.',
+        icon: 'tabler:notes',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Entwicklerressourcen"
+    subtitle="Tools und Ressourcen für Entwickler"
+    items={[
+      {
+        title: 'API Explorer',
+        description:
+          'Interaktive API-Dokumentation zum Testen von Endpoints und Generieren von Code-Snippets.',
+      },
+      {
+        title: 'Entwickler-Portal',
+        description:
+          'Zentraler Zugang zu allen Entwicklerressourcen, APIs und SDKs.',
+      },
+      {
+        title: 'Support & Community',
+        description:
+          'Technischer Support und Community-Forum für den Austausch mit anderen Entwicklern.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Developer Resources',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features
+    title="Technische Spezifikationen"
+    subtitle="Detaillierte technische Informationen"
+    columns={2}
+    items={[
+      {
+        title: 'REST APIs',
+        description: `
+          - OpenAPI/Swagger Spezifikation
+          - OAuth2 Authentifizierung
+          - Rate Limiting & Quotas
+          - Webhook Integration
+        `,
+        icon: 'tabler:api',
+      },
+      {
+        title: 'SDKs & Libraries',
+        description: `
+          - Python SDK
+          - JavaScript/Node.js SDK
+          - Java SDK
+          - .NET SDK
+        `,
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Datenformate',
+        description: `
+          - JSON/XML Support
+          - CSV Export/Import
+          - Batch Processing
+          - Streaming APIs
+        `,
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Sicherheit',
+        description: `
+          - SSL/TLS Verschlüsselung
+          - API Key Management
+          - IP Whitelisting
+          - Audit Logging
+        `,
+        icon: 'tabler:shield',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Support & Updates"
+    subtitle="Unterstützung für Entwickler"
+    items={[
+      {
+        title: 'Technischer Support',
+        description:
+          'Unser technisches Support-Team steht Ihnen bei Fragen und Problemen zur Verfügung.',
+      },
+      {
+        title: 'Versionierung',
+        description:
+          'Klare Versionierungsstrategie mit Support für ältere API-Versionen.',
+      },
+      {
+        title: 'Status Updates',
+        description:
+          'Transparente Kommunikation über System-Status und geplante Wartungsarbeiten.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Zum Developer Portal',
+        href: '#',
+        icon: 'tabler:external-link',
+      },
+      {
+        text: 'Support kontaktieren',
+        href: '/kontakt',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit zum Entwickeln?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Registrieren Sie sich im Developer Portal für Zugang zu allen Entwicklerressourcen und Support.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Grid from '~/components/blog/Grid.astro';
+import { findLatestPosts } from '~/utils/blog';
+import { APP_BLOG } from '~/config';
+
+const isEnabled = APP_BLOG?.isEnabled;
+const posts = await findLatestPosts({ count: 4 });
+---
+
+{
+  isEnabled && (
+    <section class="px-4 py-16 mx-auto max-w-7xl lg:py-20">
+      <div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
+        <h2 class="max-w-lg mb-2 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none lg:mb-5 group font-heading">
+          <span class="inline-block mb-1 sm:mb-4">Aktuelle Beiträge<br class="hidden md:block" /> aus unserem Blog</span>
+        </h2>
+        <p class="text-gray-700 dark:text-slate-400 lg:text-sm lg:max-w-md">
+          Erfahren Sie mehr über unsere Projekte, Technologien und Lösungen. Wir teilen regelmäßig Einblicke in unsere Arbeit und aktuelle Entwicklungen.
+        </p>
+      </div>
+
+      <Grid posts={posts} />
+    </section>
+  )
+}

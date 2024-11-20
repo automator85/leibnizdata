@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'System Status - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      System <span class="text-accent dark:text-white highlight">Status</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Aktuelle Informationen über den Betriebszustand unserer Systeme und Services. Hier finden Sie Echtzeitinformationen über die Verfügbarkeit unserer Dienste sowie geplante Wartungsarbeiten.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="status"
+    title="Aktuelle Systemstatus"
+    subtitle="Stand: Heute, 00:00 Uhr"
+    items={[
+      {
+        title: 'API Services',
+        description:
+          'Alle API-Dienste funktionieren normal. Durchschnittliche Latenz: 120ms',
+        icon: 'tabler:check-circle',
+      },
+      {
+        title: 'Datenbank Services',
+        description:
+          'Datenbank-Cluster arbeiten mit optimaler Performance. Keine Störungen.',
+        icon: 'tabler:check-circle',
+      },
+      {
+        title: 'Analytics Platform',
+        description:
+          'Analytics-Plattform ist voll funktionsfähig. Alle Dashboards aktuell.',
+        icon: 'tabler:check-circle',
+      },
+      {
+        title: 'ML Services',
+        description:
+          'Machine Learning Services arbeiten normal. Modell-Training verfügbar.',
+        icon: 'tabler:check-circle',
+      },
+      {
+        title: 'Storage Services',
+        description:
+          'Alle Storage-Systeme funktionieren normal. Backup-Systeme aktiv.',
+        icon: 'tabler:check-circle',
+      },
+      {
+        title: 'Authentication',
+        description:
+          'Authentifizierungssysteme arbeiten ohne Einschränkungen.',
+        icon: 'tabler:check-circle',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="System Metriken"
+    subtitle="Performance & Verfügbarkeit"
+    items={[
+      {
+        title: 'Verfügbarkeit (30 Tage)',
+        description:
+          'API Services: 99.99%\nDatenbank Services: 99.99%\nAnalytics Platform: 99.98%',
+      },
+      {
+        title: 'Durchschnittliche Latenz',
+        description:
+          'API Requests: 120ms\nDatenbank Queries: 45ms\nAnalytics Requests: 180ms',
+      },
+      {
+        title: 'Error Rate (24h)',
+        description:
+          'API Errors: 0.01%\nSystem Errors: 0.005%\nAuthentication Errors: 0.001%',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'System Metrics Dashboard',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features
+    title="Geplante Wartungsarbeiten"
+    subtitle="Anstehende System-Updates und Wartungen"
+    columns={2}
+    items={[
+      {
+        title: 'API Update v2.5',
+        description: `
+          - Datum: 15. März 2024
+          - Zeit: 02:00 - 04:00 Uhr
+          - Erwartete Downtime: < 10 min
+          - Betroffene Systeme: API Services
+        `,
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Database Maintenance',
+        description: `
+          - Datum: 20. März 2024
+          - Zeit: 03:00 - 05:00 Uhr
+          - Erwartete Downtime: Keine
+          - Betroffene Systeme: Datenbank Cluster
+        `,
+        icon: 'tabler:database',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Incident History"
+    subtitle="Vergangene Störungen und Wartungen"
+    items={[
+      {
+        title: '1. März 2024 - API Latenz',
+        description:
+          'Erhöhte API-Latenz aufgrund von Netzwerkproblemen. Behoben innerhalb von 45 Minuten.',
+      },
+      {
+        title: '15. Februar 2024 - Geplante Wartung',
+        description:
+          'Erfolgreiches System-Update auf Version 2.4. Keine ungeplanten Ausfälle.',
+      },
+      {
+        title: '5. Februar 2024 - Database Optimization',
+        description:
+          'Geplante Datenbank-Optimierung. Performance-Verbesserung um 25%.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Status abonnieren',
+        href: '#',
+        icon: 'tabler:bell',
+      },
+      {
+        text: 'Support kontaktieren',
+        href: '/kontakt',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bleiben Sie informiert
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Abonnieren Sie unsere Status-Updates, um automatisch über Störungen und Wartungsarbeiten informiert zu werden.
+    </Fragment>
+  </CallToAction>
+</Layout>

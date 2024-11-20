@@ -1,0 +1,11 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getBlogPermalink } from '~/utils/permalinks';
+
+const { class: className = 'text-muted dark:text-slate-400 hover:text-primary dark:hover:text-blue-700' } = Astro.props;
+---
+
+<a class={className} href={getBlogPermalink()}>
+  <Icon name="tabler:chevron-left" class="w-4 h-4 inline-block -mt-0.5 rtl:rotate-180" />
+  Zurück zum Blog
+</a>

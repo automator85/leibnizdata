@@ -1,0 +1,33 @@
+---
+const CONFIG = {
+  defaultTheme: 'system',
+};
+---
+
+<script is:inline define:vars={{ defaultTheme: CONFIG.defaultTheme }}>
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.getItem('theme') && defaultTheme !== 'system')) {
+    applyTheme(defaultTheme.replace(':only', ''));
+  } else if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    applyTheme(localStorage.getItem('theme'));
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  window.addEventListener('load', () => {
+    if (document.documentElement.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>

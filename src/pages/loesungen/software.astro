@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Software-Entwicklung - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Professionelle <span class="text-accent dark:text-white highlight">Software-Entwicklung</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Von der Konzeption bis zur Implementierung entwickeln wir maßgeschneiderte Softwarelösungen, die Ihr Unternehmen digitalisieren und zukunftssicher machen. Unsere erfahrenen Entwickler setzen auf moderne Technologien und bewährte Best Practices.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Unsere Software-Lösungen"
+    subtitle="Umfassende Entwicklungsleistungen für Ihren Erfolg"
+    items={[
+      {
+        title: 'Individuelle Software',
+        description:
+          'Maßgeschneiderte Softwarelösungen, die exakt auf Ihre Geschäftsanforderungen zugeschnitten sind.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Cloud-Lösungen',
+        description:
+          'Skalierbare Cloud-Anwendungen mit modernster Infrastruktur für maximale Flexibilität.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Microservices',
+        description:
+          'Modulare Architekturen für bessere Skalierbarkeit und einfachere Wartung.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'System-Integration',
+        description:
+          'Nahtlose Integration neuer Systeme in Ihre bestehende IT-Infrastruktur.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'DevOps & CI/CD',
+        description:
+          'Automatisierte Entwicklungs- und Deployment-Prozesse für schnellere Releases.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Legacy-Modernisierung',
+        description:
+          'Modernisierung bestehender Systeme mit aktuellen Technologien.',
+        icon: 'tabler:arrows-right-left',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Unser Entwicklungsprozess"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Anforderungsanalyse</span>',
+        description:
+          'Detaillierte Analyse Ihrer Anforderungen und Entwicklung einer technischen Spezifikation.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Architektur & Design</span>',
+        description:
+          'Entwicklung einer skalierbaren Architektur und technischen Infrastruktur.',
+        icon: 'tabler:architecture',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Entwicklung</span>',
+        description:
+          'Agile Entwicklung mit regelmäßigen Feedback-Schleifen und Qualitätssicherung.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Deployment & Support</span>',
+        description:
+          'Professionelles Deployment und kontinuierlicher Support Ihrer Anwendung.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Technologie-Stack"
+    subtitle="Wir setzen auf moderne und bewährte Technologien"
+    items={[
+      {
+        title: 'Backend-Entwicklung',
+        description:
+          'Java, Python, Node.js und weitere Enterprise-Technologien für robuste Backend-Systeme.',
+      },
+      {
+        title: 'Frontend-Entwicklung',
+        description:
+          'React, Angular, Vue.js für moderne und responsive Benutzeroberflächen.',
+      },
+      {
+        title: 'Datenbanken & Storage',
+        description:
+          'SQL und NoSQL Datenbanken, optimiert für Ihre spezifischen Anforderungen.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Software Development',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Antworten auf wichtige Fragen zur Software-Entwicklung"
+    items={[
+      {
+        title: 'Wie lange dauert die Entwicklung einer individuellen Software?',
+        description:
+          'Die Entwicklungszeit hängt von Umfang und Komplexität ab. Kleinere Projekte können in 3-4 Monaten realisiert werden, während größere Enterprise-Lösungen 6-12 Monate oder länger benötigen können.',
+      },
+      {
+        title: 'Welche Wartung und Support bieten Sie an?',
+        description:
+          'Wir bieten verschiedene Support-Level an, von der grundlegenden Wartung bis zum 24/7 Enterprise Support. Dies umfasst Fehlerbehebung, Updates, Sicherheitspatches und Weiterentwicklung.',
+      },
+      {
+        title: 'Wie wird die Qualität der Software sichergestellt?',
+        description:
+          'Wir setzen auf kontinuierliche Tests, Code Reviews und automatisierte CI/CD-Prozesse. Unser Qualitätsmanagement umfasst Unit Tests, Integrationstests und End-to-End Tests.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projekt besprechen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für Ihre individuelle Softwarelösung?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam die optimale Lösung für Ihre Anforderungen entwickeln. Vereinbaren Sie jetzt ein kostenloses Erstgespräch mit unseren Experten.
+    </Fragment>
+  </CallToAction>
+</Layout>

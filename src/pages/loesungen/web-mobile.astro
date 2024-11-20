@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Web & Mobile Entwicklung - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Professionelle <span class="text-accent dark:text-white highlight">Web & Mobile</span> Entwicklung
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Maßgeschneiderte Webanwendungen und mobile Apps für Ihr Unternehmen. Modern, responsiv und benutzerfreundlich - entwickelt mit neuesten Technologien.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Unsere Web & Mobile Lösungen"
+    subtitle="Umfassende Entwicklungsleistungen für Ihre digitale Präsenz"
+    items={[
+      {
+        title: 'Progressive Web Apps',
+        description:
+          'Moderne Web-Anwendungen mit App-ähnlicher Funktionalität für optimale Nutzererfahrung auf allen Geräten.',
+        icon: 'tabler:device-laptop-mobile',
+      },
+      {
+        title: 'Native Mobile Apps',
+        description:
+          'Hochwertige native Apps für iOS und Android, die das volle Potenzial der jeweiligen Plattform ausschöpfen.',
+        icon: 'tabler:brand-apple',
+      },
+      {
+        title: 'Cross-Platform Entwicklung',
+        description:
+          'Effiziente Entwicklung für mehrere Plattformen mit Frameworks wie React Native und Flutter.',
+        icon: 'tabler:apps',
+      },
+      {
+        title: 'Responsive Webdesign',
+        description:
+          'Websites und Anwendungen, die sich perfekt an alle Bildschirmgrößen anpassen.',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: 'UI/UX Design',
+        description:
+          'Nutzerfreundliche Interfaces und durchdachte User Experience für maximale Conversion.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Performance Optimierung',
+        description:
+          'Optimierung von Ladezeiten und Leistung für beste Nutzererfahrung.',
+        icon: 'tabler:chart-arrows',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Unser Entwicklungsprozess"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Konzeption</span>',
+        description:
+          'Gemeinsam entwickeln wir ein detailliertes Konzept für Ihre Web- oder Mobile-Anwendung.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Design</span>',
+        description:
+          'Erstellung von Wireframes und Design-Mockups für ein optimales Nutzererlebnis.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Entwicklung</span>',
+        description:
+          'Agile Entwicklung mit regelmäßigen Updates und Feedback-Schleifen.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Testing & Launch</span>',
+        description:
+          'Umfassende Tests und kontrollierter Launch Ihrer Anwendung.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Moderne Technologien"
+    subtitle="Wir setzen auf bewährte und zukunftssichere Technologien"
+    items={[
+      {
+        title: 'Frontend Entwicklung',
+        description:
+          'React, Vue.js, Angular und andere moderne Frameworks für dynamische Webanwendungen.',
+      },
+      {
+        title: 'Mobile Entwicklung',
+        description:
+          'Native Entwicklung mit Swift und Kotlin sowie Cross-Platform mit React Native und Flutter.',
+      },
+      {
+        title: 'Backend & API',
+        description:
+          'Skalierbare Backend-Lösungen und RESTful APIs für nahtlose Integration.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80',
+      alt: 'Web & Mobile Development',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Antworten auf wichtige Fragen zur Web- und Mobile-Entwicklung"
+    items={[
+      {
+        title: 'Welche Art von App ist die richtige für mein Projekt?',
+        description:
+          'Die Wahl zwischen nativer App, PWA oder hybrider Lösung hängt von Ihren spezifischen Anforderungen ab. Wir beraten Sie gerne bei der Auswahl der optimalen Technologie für Ihr Projekt.',
+      },
+      {
+        title: 'Wie lange dauert die Entwicklung?',
+        description:
+          'Die Entwicklungszeit variiert je nach Komplexität. Ein MVP kann in 2-3 Monaten entwickelt werden, während umfangreichere Projekte 4-6 Monate oder länger dauern können.',
+      },
+      {
+        title: 'Bieten Sie auch Wartung und Support an?',
+        description:
+          'Ja, wir bieten umfassende Wartungs- und Support-Pakete an, um die kontinuierliche Funktionalität und Aktualität Ihrer Anwendung sicherzustellen.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Projekt besprechen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für Ihr Web- oder Mobile-Projekt?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen. Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>

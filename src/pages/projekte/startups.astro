@@ -1,0 +1,248 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+import { YouTube } from 'astro-embed';
+
+const metadata = {
+  title: 'Startup Solutions - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Startup Solutions"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/contact',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+  >
+    <Fragment slot="title">
+      Empowering <span class="hidden sm:inline">the growth of</span> your <span
+        class="text-accent dark:text-white highlight">Startup</span
+      > with innovative solutions
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Partner with <span class="font-semibold">Leibniz Data</span> to accelerate your startup's growth through cutting-edge technology solutions, expert guidance, and scalable infrastructure.
+    </Fragment>
+
+    <Fragment slot="image">
+      <YouTube id="gxBkghlglTg" title="Startup Success Stories" />
+      <style is:inline>
+        lite-youtube {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      </style>
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="About Our Startup Solutions"
+    subtitle="We specialize in helping startups build, scale, and succeed in today's competitive market. Our team combines technical expertise with business acumen to deliver solutions that drive growth and innovation."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Our Impact on Startups"
+    subtitle="We take pride in the success of our startup partners and the measurable impact we've had on their growth."
+    stats={[
+      { title: 'Startups Supported', amount: '50+' },
+      { title: 'Success Rate', amount: '92%' },
+      { title: 'Client Satisfaction', amount: '4.9' },
+      { title: 'Growth Rate', amount: '3x' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="How We Help Startups"
+    subtitle="We offer comprehensive solutions designed specifically for startup needs, from initial concept to scale-up phase."
+    items={[
+      {
+        title: 'Technical Consultation',
+        description: 'Expert guidance on technology stack selection, architecture design, and scalability planning tailored to your startup needs.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'MVP Development',
+        description: 'Rapid development of Minimum Viable Products that help validate your business idea and attract early adopters and investors.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Growth Support',
+        description: 'Ongoing technical support and scalability solutions to help your startup grow and adapt to increasing demands.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Core Services for Startups"
+    subtitle="Comprehensive solutions designed to address the unique challenges faced by startups."
+    columns={3}
+    items={[
+      {
+        title: 'Technical Strategy',
+        description: 'Strategic technology planning and roadmap development to align with your business goals.',
+        icon: 'tabler:artboard',
+      },
+      {
+        title: 'Scalable Architecture',
+        description: 'Cloud-native solutions designed to scale with your startup growth.',
+        icon: 'tabler:picture-in-picture',
+      },
+      {
+        title: 'Agile Development',
+        description: 'Rapid development cycles with continuous feedback and adaptation to market needs.',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Performance Optimization',
+        description: 'Continuous monitoring and optimization to ensure peak system performance.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Security Implementation',
+        description: 'Robust security measures to protect your startup assets and user data.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Integration Services',
+        description: 'Seamless integration with third-party services and APIs to enhance functionality.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about our startup services."
+    items={[
+      {
+        title: 'How do you help early-stage startups?',
+        description: 'We provide comprehensive support including technical consultation, MVP development, and scalable infrastructure setup. Our team works closely with you to understand your vision and implement solutions that align with your goals and budget.',
+      },
+      {
+        title: 'What is your development process?',
+        description: 'We follow an agile methodology with regular sprints and continuous feedback. This allows us to adapt quickly to changes and deliver value incrementally, which is crucial for startups.',
+      },
+      {
+        title: 'How do you handle scalability?',
+        description: 'Our solutions are built with scalability in mind from day one. We use cloud-native technologies and microservices architecture to ensure your platform can handle growth efficiently.',
+      },
+      {
+        title: 'What about data security?',
+        description: 'Security is a top priority. We implement industry-standard security measures and best practices to protect your data and comply with relevant regulations.',
+      },
+      {
+        title: 'Can you help with existing projects?',
+        description: 'Yes, we can help optimize and scale existing projects. Our team can analyze your current setup and propose improvements or take over ongoing development.',
+      },
+      {
+        title: 'What ongoing support do you provide?',
+        description: 'We offer various support packages including maintenance, monitoring, optimization, and technical support to ensure your platform continues to perform optimally as your startup grows.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Get in Touch"
+    subtitle="Ready to accelerate your startup's growth? Contact us today."
+    columns={4}
+    items={[
+      {
+        title: 'Phone',
+        icon: 'tabler:phone',
+        callToAction: {
+          text: 'Call us',
+          href: '/contact',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'Write to us',
+          href: '/contact',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Schedule Meeting',
+        icon: 'tabler:calendar',
+        callToAction: {
+          text: 'Book a call',
+          href: '/contact',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          text: 'Start chatting',
+          href: '/contact',
+          variant: 'link',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Your Journey',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Transform Your Startup?</Fragment>
+
+    <Fragment slot="subtitle">
+      Let's work together to turn your innovative ideas into successful realities. Contact us today to begin your startup's transformation.
+    </Fragment>
+  </CallToAction>
+</Layout>

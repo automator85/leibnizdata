@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'KI & Machine Learning Lösungen - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Intelligente <span class="text-accent dark:text-white highlight">KI & ML</span> Lösungen
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Nutzen Sie die Kraft der Künstlichen Intelligenz und des Machine Learnings für Ihr Unternehmen. Wir entwickeln maßgeschneiderte KI-Lösungen, die Ihre Geschäftsprozesse optimieren und Ihnen einen Wettbewerbsvorteil verschaffen.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Unsere KI & ML Lösungen"
+    subtitle="Innovative Technologien für Ihren Geschäftserfolg"
+    items={[
+      {
+        title: 'Predictive Analytics',
+        description:
+          'Vorhersagemodelle für fundierte Geschäftsentscheidungen basierend auf historischen Daten und Trends.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Natural Language Processing',
+        description:
+          'Automatisierte Textanalyse und -verarbeitung für Chatbots, Sentiment Analysis und Dokumentenverarbeitung.',
+        icon: 'tabler:message-dots',
+      },
+      {
+        title: 'Computer Vision',
+        description:
+          'Bilderkennungs- und Verarbeitungslösungen für Qualitätskontrolle, Sicherheit und Automatisierung.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Automatisierung',
+        description:
+          'KI-gestützte Prozessautomatisierung für effizientere Arbeitsabläufe und reduzierte Fehlerquoten.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Recommendation Systems',
+        description:
+          'Personalisierte Empfehlungssysteme für verbesserte Kundenerfahrung und höhere Conversion-Rates.',
+        icon: 'tabler:thumb-up',
+      },
+      {
+        title: 'Deep Learning',
+        description:
+          'Komplexe neuronale Netze für anspruchsvolle Aufgaben in Bildverarbeitung, Sprache und Datenanalyse.',
+        icon: 'tabler:brain',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="KI-Implementierung"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Analyse</span>',
+        description:
+          'Analyse Ihrer Daten und Geschäftsprozesse zur Identifikation optimaler KI-Einsatzmöglichkeiten.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Konzeption</span>',
+        description:
+          'Entwicklung einer maßgeschneiderten KI-Strategie und Auswahl geeigneter Algorithmen.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Entwicklung</span>',
+        description:
+          'Implementierung und Training der KI-Modelle mit Ihren Daten.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Integration</span>',
+        description:
+          'Nahtlose Integration der KI-Lösungen in Ihre bestehenden Systeme.',
+        icon: 'tabler:puzzle',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Modernste KI-Technologien"
+    subtitle="Wir setzen auf State-of-the-Art Technologien und Frameworks"
+    items={[
+      {
+        title: 'Deep Learning Frameworks',
+        description:
+          'TensorFlow, PyTorch und andere führende Frameworks für komplexe KI-Modelle.',
+      },
+      {
+        title: 'Cloud AI Services',
+        description:
+          'Integration von Cloud-basierten KI-Services für skalierbare und kostengünstige Lösungen.',
+      },
+      {
+        title: 'Custom AI Models',
+        description:
+          'Entwicklung maßgeschneiderter KI-Modelle für Ihre spezifischen Anforderungen.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI & Machine Learning',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Antworten auf wichtige Fragen zu KI & Machine Learning"
+    items={[
+      {
+        title: 'Welche Voraussetzungen gibt es für den Einsatz von KI?',
+        description:
+          'Grundvoraussetzung ist das Vorhandensein qualitativ hochwertiger Daten. Wir unterstützen Sie bei der Evaluation Ihrer Datenqualität und der Vorbereitung der notwendigen Infrastruktur.',
+      },
+      {
+        title: 'Wie lange dauert die Entwicklung einer KI-Lösung?',
+        description:
+          'Die Entwicklungszeit hängt von der Komplexität des Projekts ab. Erste Prototypen können oft innerhalb von 2-3 Monaten entwickelt werden. Komplexere Systeme benötigen entsprechend mehr Zeit.',
+      },
+      {
+        title: 'Wie wird die Qualität der KI-Modelle sichergestellt?',
+        description:
+          'Wir setzen auf rigorose Testverfahren und kontinuierliche Validierung. Unsere KI-Modelle werden regelmäßig evaluiert und bei Bedarf nachtrainiert, um optimale Ergebnisse zu gewährleisten.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'KI-Beratung anfragen',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für die KI-Revolution?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam erkunden, wie KI & Machine Learning Ihr Unternehmen voranbringen können. Vereinbaren Sie jetzt ein kostenloses Erstgespräch mit unseren KI-Experten.
+    </Fragment>
+  </CallToAction>
+</Layout>

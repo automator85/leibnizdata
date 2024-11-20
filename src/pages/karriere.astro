@@ -1,0 +1,159 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Karriere bei Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Karriere bei <span class="text-accent dark:text-white highlight">Leibniz Data</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Werden Sie Teil eines innovativen Teams und arbeiten Sie an spannenden Projekten mit modernsten Technologien. Bei Leibniz Data erwarten Sie herausfordernde Aufgaben, flexible Arbeitsmodelle und exzellente Entwicklungsmöglichkeiten.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="benefits"
+    title="Ihre Vorteile"
+    subtitle="Was wir Ihnen bieten"
+    items={[
+      {
+        title: 'Flexible Arbeitszeiten',
+        description:
+          'Work-Life-Balance durch flexible Arbeitszeiten und Home-Office-Möglichkeiten.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Moderne Technologien',
+        description:
+          'Arbeiten Sie mit den neuesten Technologien und Tools in der Softwareentwicklung.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Weiterbildung',
+        description:
+          'Individuelles Weiterbildungsbudget und regelmäßige interne Schulungen.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Team Events',
+        description:
+          'Regelmäßige Team-Events, Hackathons und gemeinsame Aktivitäten.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Gesundheitsförderung',
+        description:
+          'Betriebliche Gesundheitsförderung und ergonomische Arbeitsplatzausstattung.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Entwicklungsmöglichkeiten',
+        description:
+          'Klare Karrierepfade und individuelle Entwicklungsmöglichkeiten.',
+        icon: 'tabler:growth',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Unsere Stellenangebote"
+    subtitle="Aktuelle Positionen bei Leibniz Data"
+    items={[
+      {
+        title: 'Senior Software Engineer (m/w/d)',
+        description:
+          'Entwicklung skalierbarer Softwarelösungen mit modernen Technologien wie Java, Python oder Node.js.',
+      },
+      {
+        title: 'Data Scientist (m/w/d)',
+        description:
+          'Entwicklung und Implementierung von Machine Learning Modellen und Datenanalyse-Lösungen.',
+      },
+      {
+        title: 'Frontend Developer (m/w/d)',
+        description:
+          'Entwicklung moderner Webanwendungen mit React, Angular oder Vue.js.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Karriere bei Leibniz Data',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features
+    title="Unser Bewerbungsprozess"
+    subtitle="So läuft Ihre Bewerbung bei uns ab"
+    columns={4}
+    items={[
+      {
+        title: '1. Online Bewerbung',
+        description:
+          'Senden Sie uns Ihre vollständigen Bewerbungsunterlagen über unser Karriereportal.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: '2. Erstes Gespräch',
+        description:
+          'Lernen Sie uns in einem ersten Video-Call oder persönlichen Gespräch kennen.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '3. Technisches Interview',
+        description:
+          'Zeigen Sie Ihre technischen Fähigkeiten in einem fachlichen Gespräch.',
+        icon: 'tabler:code',
+      },
+      {
+        title: '4. Vertragsangebot',
+        description:
+          'Bei beidseitigem Interesse erhalten Sie von uns ein Vertragsangebot.',
+        icon: 'tabler:file-check',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Jetzt bewerben',
+        href: '/kontakt',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Mehr über uns',
+        href: '/ueber-uns',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Starten Sie Ihre Karriere bei uns
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Sie finden keine passende Stelle? Wir freuen uns auch über Ihre Initiativbewerbung! Senden Sie uns Ihre Unterlagen und erzählen Sie uns, wie Sie unser Team verstärken möchten.
+    </Fragment>
+  </CallToAction>
+</Layout>

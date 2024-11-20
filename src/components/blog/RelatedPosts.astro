@@ -1,0 +1,31 @@
+---
+import type { Post } from '~/types';
+import { getRelatedPosts } from '~/utils/blog';
+import ListItem from './ListItem.astro';
+
+export interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const relatedPosts = await getRelatedPosts(post);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-12">
+      <section class="border-t border-gray-200 dark:border-slate-800">
+        <div class="py-8 sm:py-8">
+          <h2 class="text-2xl font-bold mb-4">Ähnliche Artikel</h2>
+          <ul>
+            {relatedPosts.map((relatedPost) => (
+              <li class="mb-12 md:mb-16">
+                <ListItem post={relatedPost} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
+  )
+}

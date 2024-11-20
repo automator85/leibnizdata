@@ -1,0 +1,277 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'Software Projects - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Contact',
+          href: '/contact',
+        },
+        {
+          variant: 'primary',
+          text: 'Get Started',
+          href: '#',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Software Development"
+    actions={[
+      { variant: 'primary', text: 'Learn More', href: '#features' },
+      { text: 'Contact Us', href: '/contact' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Leibniz Data Software Development',
+    }}
+  >
+    <Fragment slot="title">
+      Innovative Software Solutions <br /> for your <span class="text-accent dark:text-white highlight">Business</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Transform your business with <span class="font-semibold">Leibniz Data</span>'s custom software solutions.</span
+      >
+      We combine cutting-edge technology with industry expertise to deliver software that drives your success.
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Our Software Solutions"
+    subtitle="Discover how our software development expertise can benefit your business."
+    columns={2}
+    items={[
+      {
+        title: 'Custom Software Development',
+        description:
+          'Tailored solutions designed specifically for your business needs, ensuring optimal performance and scalability.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Web Applications',
+        description: 'Modern, responsive web applications that provide seamless user experiences across all devices.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Mobile Development',
+        description:
+          'Native and cross-platform mobile applications that engage your users and extend your reach.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Cloud Solutions',
+        description: 'Scalable cloud infrastructure and services that ensure reliability and performance.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'API Development',
+        description: 'Robust and secure APIs that enable seamless integration with other systems and services.',
+        icon: 'tabler:api',
+      },
+      {
+        title: 'Data Analytics',
+        description: 'Advanced analytics solutions that help you make data-driven decisions for your business.',
+        icon: 'tabler:chart-dots',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Enterprise Solutions"
+    subtitle="Discover how our enterprise software solutions can transform your business operations and drive growth."
+    isReversed
+    items={[
+      {
+        title: 'Scalable Architecture:',
+        description:
+          'Our enterprise solutions are built on robust, scalable architectures that grow with your business. We utilize modern technologies and best practices to ensure your software can handle increasing demands while maintaining performance and reliability.',
+      },
+      {
+        title: 'Benefits:',
+        description: `Improved operational efficiency and productivity\nSeamless integration with existing systems\nEnhanced data security and compliance\nScalable infrastructure for future growth\nComprehensive support and maintenance`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      alt: 'Enterprise Solutions',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Enterprise Excellence: <br /><span class="text-2xl">Powering Your Business Growth</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Pricing
+    title="Software Development Services"
+    prices={[
+      {
+        title: 'Basic',
+        subtitle: 'For small software projects',
+        price: 'Custom',
+        period: 'Starting from',
+        items: [
+          { title: 'Project consultation' },
+          { title: 'Custom development' },
+          { title: 'Basic support' },
+          { title: 'Code documentation' }
+        ],
+        callToAction: {
+          text: 'Contact Us',
+          href: '/contact',
+        },
+      },
+      {
+        title: 'Professional',
+        subtitle: 'For medium-sized applications',
+        price: 'Custom',
+        period: 'Starting from',
+        items: [
+          { title: 'Everything in Basic' },
+          { title: 'Advanced features' },
+          { title: 'Priority support' },
+          { title: 'Performance optimization' },
+          { title: 'Security audit' }
+        ],
+        callToAction: {
+          text: 'Contact Us',
+          href: '/contact',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Enterprise',
+        subtitle: 'For large-scale solutions',
+        price: 'Custom',
+        period: 'Starting from',
+        items: [
+          { title: 'Everything in Professional' },
+          { title: 'Enterprise integration' },
+          { title: '24/7 support' },
+          { title: 'Custom SLA' },
+          { title: 'Dedicated team' }
+        ],
+        callToAction: {
+          text: 'Contact Us',
+          href: '/contact',
+        },
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'What types of software projects do you handle?',
+        description:
+          'We handle a wide range of software projects including web applications, mobile apps, enterprise software, cloud solutions, and custom software development. Our team has expertise in various technologies and can adapt to your specific needs.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'How long does a typical software project take?',
+        description:
+          'Project timelines vary depending on complexity and requirements. Small projects might take a few weeks, while larger enterprise solutions can take several months. We provide detailed timelines during the initial consultation.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Do you provide ongoing support after project completion?',
+        description:
+          'Yes, we offer various support and maintenance packages to ensure your software continues to perform optimally. This includes bug fixes, updates, security patches, and feature enhancements as needed.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'How do you handle project communication and updates?',
+        description:
+          'We maintain regular communication through scheduled meetings and progress reports. Our project management approach ensures transparency and keeps you informed at every stage of development.',
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Get Started"
+    subtitle="Ready to transform your business with our software solutions? Contact us today."
+    callToAction={{
+      text: 'Contact us',
+      href: '/contact',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'contact@leibniz-data.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+49 (000) 000-000',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@leibnizdata',
+        icon: 'tabler:brand-linkedin',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Latest Software Development Insights"
+    information={`Stay updated with our latest articles on software development, technology trends, and best practices.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+</Layout>

@@ -1,0 +1,250 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Leibniz Data - Innovative Softwarelösungen & Datenanalyse aus Berlin',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakt aufnehmen',
+        href: getPermalink('/kontakt'),
+        icon: 'tabler:mail',
+      },
+      { text: 'Mehr erfahren', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'Leibniz Data Hero Image' }}
+  >
+    <Fragment slot="title">
+      Ihre Vision, unsere <span class="text-accent dark:text-white highlight">Expertise</span> in Datenanalyse & Softwareentwicklung
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Leibniz Data</span> ist Ihr Partner für maßgeschneiderte Softwarelösungen und fortschrittliche Datenanalyse in Berlin.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Leibniz Data: Innovation trifft Expertise.</span>
+      Wir optimieren Ihre digitale Präsenz und entwickeln innovative Softwarelösungen, die Ihr Unternehmen voranbringen.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Unsere Stärken"
+    title="Was Leibniz Data auszeichnet"
+    subtitle="Als Berliner Unternehmen verbinden wir technische Innovation mit praktischer Expertise für Ihren Erfolg."
+    items={[
+      {
+        title: 'Datengetriebene Lösungen',
+        description:
+          'Wir nutzen modernste Analysetechniken, um aus Ihren Daten wertvolle Erkenntnisse zu gewinnen und messbare Ergebnisse zu erzielen.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Maßgeschneiderte Software',
+        description:
+          'Von Webanwendungen bis zu komplexen Systemen - wir entwickeln passgenaue Softwarelösungen für Ihre individuellen Anforderungen.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'SEO-Optimierung',
+        description:
+          'Maximieren Sie Ihre Online-Sichtbarkeit durch unsere durchdachten SEO-Strategien und technischen Optimierungen.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Performance-Optimierung',
+        description:
+          'Schnelle Ladezeiten und optimale Leistung sind entscheidend. Wir sorgen für eine effiziente und responsive Nutzererfahrung.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Full-Stack Entwicklung',
+        description:
+          'Von der Datenbankarchitektur bis zum Frontend - wir beherrschen alle Ebenen der modernen Softwareentwicklung.',
+        icon: 'tabler:stack-2',
+      },
+      {
+        title: 'Agile Projektabwicklung',
+        description:
+          'Flexible und transparente Zusammenarbeit mit regelmäßigen Updates und schneller Anpassung an neue Anforderungen.',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Unsere Dienstleistungen"
+    subtitle="Entdecken Sie unser umfassendes Angebot an maßgeschneiderten Lösungen"
+    items={[
+      {
+        title: 'Webentwicklung',
+        description: 'Moderne, responsive Websites und Webanwendungen mit optimaler Performance und Benutzerfreundlichkeit.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Datenanalyse',
+        description: 'Umfassende Analyse Ihrer Geschäftsdaten für fundierte Entscheidungen und Prozessoptimierung.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Softwareentwicklung',
+        description: 'Individuelle Softwarelösungen, die genau auf Ihre Geschäftsanforderungen zugeschnitten sind.',
+        icon: 'tabler:code',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="So arbeiten wir mit Ihnen zusammen"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Analyse</span>',
+        description:
+          'Wir analysieren Ihre Anforderungen im Detail und entwickeln ein maßgeschneidertes Konzept für Ihr Projekt.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Entwicklung</span>',
+        description:
+          'In agilen Entwicklungszyklen setzen wir Ihre Lösung um und halten Sie stets über den Fortschritt auf dem Laufenden.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Optimierung</span>',
+        description:
+          'Durch kontinuierliche Tests und Optimierungen stellen wir sicher, dass Ihre Lösung optimal performt.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Erfolg!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Projektablauf',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Unsere Expertise"
+    title="Technologie im Dienst Ihres Erfolgs"
+    items={[
+      {
+        title: 'Datenanalyse & Business Intelligence',
+        description:
+          'Verwandeln Sie Ihre Daten in wertvolle Erkenntnisse für fundierte Geschäftsentscheidungen.',
+      },
+      {
+        title: 'Moderne Webtechnologien',
+        description:
+          'Entwicklung mit zukunftssicheren Technologien für maximale Performance und Skalierbarkeit.',
+      },
+      {
+        title: 'Benutzerfreundliches Design',
+        description:
+          'Intuitive Benutzeroberflächen, die Ihre Zielgruppe begeistern und Konversionen steigern.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Leibniz Data Technologie',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Innovation aus Berlin</h3>
+      Profitieren Sie von unserer Expertise in modernster Technologie
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Zufriedene Kunden', amount: '50+' },
+      { title: 'Erfolgreiche Projekte', amount: '100+' },
+      { title: 'Jahre Erfahrung', amount: '5+' },
+      { title: 'Expertenlösungen', amount: '200+' },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Finden Sie Antworten auf die wichtigsten Fragen zu unseren Dienstleistungen."
+    items={[
+      {
+        title: 'Wie läuft ein typisches Projekt bei Leibniz Data ab?',
+        description:
+          'Wir beginnen mit einer gründlichen Analyse Ihrer Anforderungen, entwickeln gemeinsam eine Strategie und setzen diese in agilen Entwicklungszyklen um. Dabei bleiben Sie stets über den Fortschritt informiert.',
+      },
+      {
+        title: 'Welche Arten von Projekten übernehmen Sie?',
+        description:
+          'Von Webentwicklung über Datenanalyse bis hin zu komplexen Softwarelösungen - wir decken das gesamte Spektrum moderner IT-Dienstleistungen ab.',
+      },
+      {
+        title: 'Wie gewährleisten Sie die Qualität Ihrer Lösungen?',
+        description:
+          'Durch kontinuierliche Tests, Code-Reviews und den Einsatz bewährter Best Practices stellen wir höchste Qualität sicher.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakt aufnehmen',
+        href: getPermalink('/kontakt'),
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für den nächsten Schritt?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihr Projekt zum Erfolg führen. Kontaktieren Sie uns noch heute für ein unverbindliches Gespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>

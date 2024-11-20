@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'E-Commerce Lösungen - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Intelligente <span class="text-accent dark:text-white highlight">E-Commerce</span> Lösungen
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Steigern Sie Ihren Online-Erfolg mit datengetriebenen E-Commerce-Lösungen. Von Kundenanalyse bis Prozessautomatisierung - wir optimieren Ihren digitalen Handel.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="E-Commerce Excellence"
+    subtitle="Umfassende Lösungen für Ihren Online-Handel"
+    items={[
+      {
+        title: 'Personalisierung',
+        description:
+          'KI-gestützte Personalisierung für individuelle Kundenerlebnisse und höhere Conversion-Rates.',
+        icon: 'tabler:user-circle',
+      },
+      {
+        title: 'Conversion Optimierung',
+        description:
+          'Datenbasierte Optimierung Ihrer Customer Journey für maximale Conversion.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Automatisierung',
+        description:
+          'Automatisierung von Bestellabwicklung, Lagermanagement und Marketing-Prozessen.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Analytics & Reporting',
+        description:
+          'Umfassende Einblicke in Kundenverhalten, Verkaufszahlen und Marketing-Performance.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Multi-Channel',
+        description:
+          'Nahtlose Integration verschiedener Verkaufskanäle für ein einheitliches Kundenerlebnis.',
+        icon: 'tabler:apps',
+      },
+      {
+        title: 'Performance',
+        description:
+          'Optimierte Ladezeiten und Skalierbarkeit für maximale Shop-Performance.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Ihr Weg zum optimierten E-Commerce"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Analyse</span>',
+        description:
+          'Umfassende Analyse Ihres bestehenden Online-Shops und Identifikation von Optimierungspotentialen.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">Strategie</span>',
+        description:
+          'Entwicklung einer maßgeschneiderten E-Commerce-Strategie basierend auf Ihren Zielen.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Optimierung</span>',
+        description:
+          'Implementierung von Verbesserungen und neuen Funktionen für mehr Effizienz und Umsatz.',
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Wachstum</span>',
+        description:
+          'Kontinuierliche Optimierung und Skalierung Ihres Online-Geschäfts.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Datengetriebener E-Commerce"
+    subtitle="Nutzen Sie die Kraft der Daten für Ihren Online-Erfolg"
+    items={[
+      {
+        title: 'Customer Insights',
+        description:
+          'Tiefgehende Einblicke in das Kundenverhalten für bessere Geschäftsentscheidungen.',
+      },
+      {
+        title: 'Prozessoptimierung',
+        description:
+          'Automatisierte Workflows und optimierte Geschäftsprozesse für mehr Effizienz.',
+      },
+      {
+        title: 'Wachstumsstrategie',
+        description:
+          'Datenbasierte Strategien für nachhaltiges Wachstum im E-Commerce.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'E-Commerce Analytics',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Antworten auf wichtige Fragen zu unseren E-Commerce-Lösungen"
+    items={[
+      {
+        title: 'Wie können Sie unsere Conversion-Rate verbessern?',
+        description:
+          'Durch eine Kombination aus Datenanalyse, A/B-Testing und KI-gestützter Personalisierung optimieren wir kontinuierlich Ihre Customer Journey. Wir identifizieren Abbruchpunkte und implementieren gezielte Verbesserungen.',
+      },
+      {
+        title: 'Welche E-Commerce-Systeme unterstützen Sie?',
+        description:
+          'Wir haben Erfahrung mit allen gängigen E-Commerce-Plattformen wie Shopify, WooCommerce, Magento und individuellen Shop-Lösungen. Unsere Lösungen können an jedes System angebunden werden.',
+      },
+      {
+        title: 'Wie lange dauert die Implementierung?',
+        description:
+          'Die Implementierungszeit hängt von Ihren spezifischen Anforderungen ab. Erste Optimierungen können oft innerhalb weniger Wochen umgesetzt werden. Umfangreichere Projekte werden in Phasen realisiert.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'E-Commerce Beratung anfragen',
+        href: '/kontakt',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für mehr Online-Erfolg?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihren E-Commerce auf das nächste Level heben. Vereinbaren Sie jetzt ein kostenloses Beratungsgespräch mit unseren E-Commerce-Experten.
+    </Fragment>
+  </CallToAction>
+</Layout>

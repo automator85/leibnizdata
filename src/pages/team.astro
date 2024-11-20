@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Unser Team - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Unser <span class="text-accent dark:text-white highlight">Team</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lernen Sie die Experten kennen, die Leibniz Data zu einem führenden Technologiepartner machen. Unser Team vereint jahrelange Erfahrung in Softwareentwicklung, Datenanalyse und digitaler Transformation.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="team"
+    title="Unsere Experten"
+    subtitle="Ein Team aus erfahrenen Spezialisten"
+    items={[
+      {
+        title: 'Dr. Marcus Weber',
+        description:
+          'CEO & Gründer - Über 15 Jahre Erfahrung in der Softwareentwicklung und KI. Promotion in Computer Science.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Dr. Sarah Schmidt',
+        description:
+          'CTO - Expertin für Machine Learning und Data Science. Leitete zuvor KI-Projekte bei führenden Tech-Unternehmen.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Michael Bauer',
+        description:
+          'Lead Software Architect - Spezialist für Cloud-Architekturen und Microservices mit 12 Jahren Erfahrung.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Laura Meyer',
+        description:
+          'Head of Data Analytics - Expertin für Business Intelligence und Predictive Analytics.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Thomas Schulz',
+        description:
+          'Senior Frontend Developer - Spezialist für moderne Webtechnologien und User Experience Design.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Julia Koch',
+        description:
+          'Project Manager - Zertifizierte Scrum Master mit umfangreicher Erfahrung in agiler Projektleitung.',
+        icon: 'tabler:user',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Unsere Unternehmenskultur"
+    subtitle="Was uns als Team auszeichnet"
+    items={[
+      {
+        title: 'Innovation & Expertise',
+        description:
+          'Wir leben eine Kultur der kontinuierlichen Innovation und Weiterbildung. Jedes Teammitglied ist Experte in seinem Bereich und teilt sein Wissen aktiv mit Kollegen.',
+      },
+      {
+        title: 'Kundenorientierung',
+        description:
+          'Der Erfolg unserer Kunden steht im Mittelpunkt unseres Handelns. Wir arbeiten eng mit unseren Kunden zusammen, um optimale Lösungen zu entwickeln.',
+      },
+      {
+        title: 'Agiles Mindset',
+        description:
+          'Flexibilität und schnelle Anpassung an neue Anforderungen sind Teil unserer DNA. Wir arbeiten agil und iterativ für beste Ergebnisse.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80',
+      alt: 'Leibniz Data Team',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features
+    title="Unsere Werte"
+    subtitle="Was uns antreibt und verbindet"
+    columns={3}
+    items={[
+      {
+        title: 'Qualität',
+        description:
+          'Wir setzen höchste Standards in allem, was wir tun. Qualität ist für uns nicht verhandelbar.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Innovation',
+        description:
+          'Wir sind stets auf der Suche nach neuen Wegen und besseren Lösungen für unsere Kunden.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Teamwork',
+        description:
+          'Gemeinsam sind wir stärker. Wir fördern Zusammenarbeit und gegenseitige Unterstützung.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Karriere bei Leibniz Data',
+        href: '/karriere',
+        icon: 'tabler:briefcase',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Werden Sie Teil unseres Teams
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Wir sind immer auf der Suche nach talentierten Menschen, die unsere Leidenschaft für Technologie und Innovation teilen. Entdecken Sie unsere offenen Stellen.
+    </Fragment>
+  </CallToAction>
+</Layout>

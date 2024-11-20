@@ -1,0 +1,179 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Startup-Lösungen - Leibniz Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Innovative Lösungen für <span class="text-accent dark:text-white highlight">Startups</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Wir unterstützen Startups mit maßgeschneiderten Technologielösungen, die Wachstum ermöglichen und Skalierung vereinfachen. Von der ersten MVP-Entwicklung bis zur ausgereiften Plattform - wir sind Ihr technologischer Partner.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Speziell für Startups"
+    subtitle="Maßgeschneiderte Lösungen für die besonderen Anforderungen junger Unternehmen"
+    items={[
+      {
+        title: 'Agile Entwicklung',
+        description:
+          'Schnelle Entwicklungszyklen und flexible Anpassungen ermöglichen es Ihnen, schnell auf Marktanforderungen zu reagieren.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'MVP-Entwicklung',
+        description:
+          'Entwicklung eines Minimum Viable Product zur schnellen Marktvalidierung Ihrer Geschäftsidee.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Skalierbare Architektur',
+        description:
+          'Zukunftssichere Technologiearchitektur, die mit Ihrem Unternehmen mitwächst.',
+        icon: 'tabler:stack-2',
+      },
+      {
+        title: 'Datengetriebene Entscheidungen',
+        description:
+          'Analytics-Integration und Dashboards für fundierte Geschäftsentscheidungen.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Cloud-Native',
+        description:
+          'Moderne Cloud-Infrastruktur für maximale Flexibilität und Kostenkontrolle.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Technische Beratung',
+        description:
+          'Erfahrene Entwickler beraten Sie bei technologischen Entscheidungen.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="So unterstützen wir Ihr Startup"
+    items={[
+      {
+        title: 'Schritt 1: <span class="font-medium">Analyse & Strategie</span>',
+        description:
+          'Gemeinsam analysieren wir Ihre Anforderungen und entwickeln eine passende technische Strategie.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Schritt 2: <span class="font-medium">MVP-Entwicklung</span>',
+        description:
+          'Schnelle Entwicklung eines Minimum Viable Product zur Validierung Ihrer Geschäftsidee.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Schritt 3: <span class="font-medium">Iteration & Optimierung</span>',
+        description:
+          'Kontinuierliche Verbesserung basierend auf Nutzerfeedback und Marktanforderungen.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Schritt 4: <span class="font-medium">Skalierung</span>',
+        description:
+          'Ausbau der Plattform für Wachstum und steigende Nutzerzahlen.',
+        icon: 'tabler:chart-arrows-vertical',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    title="Technologie als Wettbewerbsvorteil"
+    subtitle="Nutzen Sie modernste Technologien für Ihren Geschäftserfolg"
+    items={[
+      {
+        title: 'Moderne Technologie-Stack',
+        description:
+          'Wir setzen auf bewährte und zukunftssichere Technologien, die Stabilität und Innovationskraft vereinen.',
+      },
+      {
+        title: 'Performance & Skalierbarkeit',
+        description:
+          'Unsere Lösungen sind von Grund auf für Wachstum und hohe Nutzerzahlen ausgelegt.',
+      },
+      {
+        title: 'Kosteneffizienz',
+        description:
+          'Cloud-native Architekturen ermöglichen optimale Ressourcennutzung und Kostenkontrolle.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Startup Technology',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Häufig gestellte Fragen"
+    subtitle="Finden Sie Antworten auf die wichtigsten Fragen zur Zusammenarbeit mit Leibniz Data"
+    items={[
+      {
+        title: 'Wie lange dauert die Entwicklung eines MVP?',
+        description:
+          'Die Entwicklungszeit hängt von der Komplexität Ihres Projekts ab. Typischerweise können wir ein erstes MVP innerhalb von 2-3 Monaten liefern.',
+      },
+      {
+        title: 'Welche Technologien verwenden Sie?',
+        description:
+          'Wir setzen auf moderne, bewährte Technologien wie React, Node.js, Python und Cloud-Services von AWS oder Google Cloud. Die konkrete Technologieauswahl treffen wir basierend auf Ihren spezifischen Anforderungen.',
+      },
+      {
+        title: 'Wie sieht die Zusammenarbeit aus?',
+        description:
+          'Wir arbeiten agil und transparent. Sie erhalten regelmäßige Updates und sind eng in den Entwicklungsprozess eingebunden. Kommunikation erfolgt über moderne Kollaborationstools.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Startup-Beratung vereinbaren',
+        href: '/kontakt',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Bereit für den nächsten Schritt?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Lassen Sie uns gemeinsam Ihr Startup zum Erfolg führen. Vereinbaren Sie jetzt ein kostenloses Erstgespräch.
+    </Fragment>
+  </CallToAction>
+</Layout>
