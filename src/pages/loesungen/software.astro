@@ -1,104 +1,66 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Software-Entwicklung - Leibniz Data',
+  title: 'Softwareentwicklung',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-  <Hero>
-    <Fragment slot="title">
-      Professionelle <span class="text-accent dark:text-white highlight">Software-Entwicklung</span>
-    </Fragment>
+  <HeroText
+    tagline="Softwareentwicklung"
+    title="Maßgeschneiderte Softwarelösungen"
+    subtitle="Wir entwickeln innovative und skalierbare Softwarelösungen für Ihr Unternehmen."
+  />
 
-    <Fragment slot="subtitle">
-      Von der Konzeption bis zur Implementierung entwickeln wir maßgeschneiderte Softwarelösungen, die Ihr Unternehmen digitalisieren und zukunftssicher machen. Unsere erfahrenen Entwickler setzen auf moderne Technologien und bewährte Best Practices.
-    </Fragment>
-  </Hero>
+  <!-- Features2 Widget ************** -->
 
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    title="Unsere Software-Lösungen"
-    subtitle="Umfassende Entwicklungsleistungen für Ihren Erfolg"
+  <Features2
+    title="Unsere Softwareentwicklung"
+    subtitle="Wir bieten umfassende Dienstleistungen in der Softwareentwicklung"
     items={[
       {
-        title: 'Individuelle Software',
+        title: 'Architektur & Design',
         description:
-          'Maßgeschneiderte Softwarelösungen, die exakt auf Ihre Geschäftsanforderungen zugeschnitten sind.',
-        icon: 'tabler:code',
+          'Entwicklung skalierbarer Architekturen und technischer Infrastrukturen.',
+        icon: 'tabler:building-arch',
       },
       {
-        title: 'Cloud-Lösungen',
+        title: 'Agile Entwicklung',
         description:
-          'Skalierbare Cloud-Anwendungen mit modernster Infrastruktur für maximale Flexibilität.',
-        icon: 'tabler:cloud',
-      },
-      {
-        title: 'Microservices',
-        description:
-          'Modulare Architekturen für bessere Skalierbarkeit und einfachere Wartung.',
-        icon: 'tabler:puzzle',
-      },
-      {
-        title: 'System-Integration',
-        description:
-          'Nahtlose Integration neuer Systeme in Ihre bestehende IT-Infrastruktur.',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'DevOps & CI/CD',
-        description:
-          'Automatisierte Entwicklungs- und Deployment-Prozesse für schnellere Releases.',
+          'Flexible und effiziente Entwicklung mit agilen Methoden.',
         icon: 'tabler:refresh',
       },
       {
-        title: 'Legacy-Modernisierung',
+        title: 'Cloud Solutions',
         description:
-          'Modernisierung bestehender Systeme mit aktuellen Technologien.',
-        icon: 'tabler:arrows-right-left',
-      },
-    ]}
-  />
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Unser Entwicklungsprozess"
-    items={[
-      {
-        title: 'Schritt 1: <span class="font-medium">Anforderungsanalyse</span>',
-        description:
-          'Detaillierte Analyse Ihrer Anforderungen und Entwicklung einer technischen Spezifikation.',
-        icon: 'tabler:list-check',
+          'Entwicklung und Migration von Cloud-basierten Anwendungen.',
+        icon: 'tabler:cloud',
       },
       {
-        title: 'Schritt 2: <span class="font-medium">Architektur & Design</span>',
+        title: 'Mobile Apps',
         description:
-          'Entwicklung einer skalierbaren Architektur und technischen Infrastruktur.',
-        icon: 'tabler:architecture',
+          'Entwicklung nativer und hybrider mobiler Anwendungen.',
+        icon: 'tabler:device-mobile',
       },
       {
-        title: 'Schritt 3: <span class="font-medium">Entwicklung</span>',
+        title: 'Web Applications',
         description:
-          'Agile Entwicklung mit regelmäßigen Feedback-Schleifen und Qualitätssicherung.',
-        icon: 'tabler:code',
+          'Entwicklung moderner und responsiver Webanwendungen.',
+        icon: 'tabler:browser',
       },
       {
-        title: 'Schritt 4: <span class="font-medium">Deployment & Support</span>',
+        title: 'API Development',
         description:
-          'Professionelles Deployment und kontinuierlicher Support Ihrer Anwendung.',
-        icon: 'tabler:rocket',
+          'Entwicklung und Integration von RESTful APIs und Microservices.',
+        icon: 'tabler:api',
       },
     ]}
   />
@@ -107,73 +69,110 @@ const metadata = {
 
   <Content
     isReversed
-    title="Technologie-Stack"
-    subtitle="Wir setzen auf moderne und bewährte Technologien"
     items={[
       {
-        title: 'Backend-Entwicklung',
+        title: 'Modern & Skalierbar',
         description:
-          'Java, Python, Node.js und weitere Enterprise-Technologien für robuste Backend-Systeme.',
+          'Unsere Softwarelösungen basieren auf modernsten Technologien und sind hochskalierbar.',
       },
       {
-        title: 'Frontend-Entwicklung',
+        title: 'Qualitätssicherung',
         description:
-          'React, Angular, Vue.js für moderne und responsive Benutzeroberflächen.',
+          'Umfassende Tests und Qualitätssicherung in allen Entwicklungsphasen.',
       },
       {
-        title: 'Datenbanken & Storage',
+        title: 'Wartbar & Erweiterbar',
         description:
-          'SQL und NoSQL Datenbanken, optimiert für Ihre spezifischen Anforderungen.',
+          'Clean Code und beste Praktiken für langfristig wartbare Software.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: 'Software Development',
     }}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Moderne Softwareentwicklung</h3>
+    </Fragment>
+  </Content>
 
-  <!-- FAQs Widget ******************* -->
+  <!-- Content Widget **************** -->
 
-  <FAQs
-    title="Häufig gestellte Fragen"
-    subtitle="Antworten auf wichtige Fragen zur Software-Entwicklung"
+  <Content
     items={[
       {
-        title: 'Wie lange dauert die Entwicklung einer individuellen Software?',
+        title: 'Expertise',
         description:
-          'Die Entwicklungszeit hängt von Umfang und Komplexität ab. Kleinere Projekte können in 3-4 Monaten realisiert werden, während größere Enterprise-Lösungen 6-12 Monate oder länger benötigen können.',
+          'Erfahrenes Entwicklerteam mit umfassender technischer Expertise.',
       },
       {
-        title: 'Welche Wartung und Support bieten Sie an?',
+        title: 'Agile Methoden',
         description:
-          'Wir bieten verschiedene Support-Level an, von der grundlegenden Wartung bis zum 24/7 Enterprise Support. Dies umfasst Fehlerbehebung, Updates, Sicherheitspatches und Weiterentwicklung.',
+          'Flexible Entwicklung mit Scrum und anderen agilen Methoden.',
       },
       {
-        title: 'Wie wird die Qualität der Software sichergestellt?',
+        title: 'Technologie-Stack',
         description:
-          'Wir setzen auf kontinuierliche Tests, Code Reviews und automatisierte CI/CD-Prozesse. Unser Qualitätsmanagement umfasst Unit Tests, Integrationstests und End-to-End Tests.',
+          'Einsatz modernster Technologien und Frameworks.',
       },
     ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Modern Software',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Warum wir?</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Unser Entwicklungsprozess"
+    items={[
+      {
+        title: 'Anforderungsanalyse',
+        description:
+          'Detaillierte Analyse Ihrer Anforderungen und Geschäftsprozesse.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Design & Architektur',
+        description:
+          'Entwicklung der technischen Architektur und des UI/UX Designs.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Entwicklung',
+        description:
+          'Agile Entwicklung mit regelmäßigen Feedback-Schleifen.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Testing & Deployment',
+        description:
+          'Umfassende Tests und professionelles Deployment.',
+        icon: 'tabler:test-pipe',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Steps Software',
+    }}
   />
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
+    title="Bereit für Ihre neue Softwarelösung?"
+    subtitle="Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch."
     actions={[
       {
         variant: 'primary',
-        text: 'Projekt besprechen',
+        text: 'Kontakt aufnehmen',
         href: '/kontakt',
-        icon: 'tabler:mail',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Bereit für Ihre individuelle Softwarelösung?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Lassen Sie uns gemeinsam die optimale Lösung für Ihre Anforderungen entwickeln. Vereinbaren Sie jetzt ein kostenloses Erstgespräch mit unseren Experten.
-    </Fragment>
-  </CallToAction>
+  />
 </Layout>

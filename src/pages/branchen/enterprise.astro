@@ -1,104 +1,66 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Enterprise Lösungen - Leibniz Data',
+  title: 'Enterprise Solutions',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-  <Hero>
-    <Fragment slot="title">
-      Enterprise-Grade <span class="text-accent dark:text-white highlight">Lösungen</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Maßgeschneiderte Datenanalyse und Softwarelösungen für Großunternehmen. Wir verbinden Skalierbarkeit, Sicherheit und Innovation für Ihre unternehmensweiten Anforderungen.
-    </Fragment>
-  </Hero>
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    title="Enterprise Solutions"
-    subtitle="Umfassende Lösungen für komplexe Unternehmensanforderungen"
-    items={[
-      {
-        title: 'Skalierbare Architekturen',
-        description:
-          'Hochverfügbare Systeme, die auch bei großen Datenmengen und hoher Nutzerlast zuverlässig funktionieren.',
-        icon: 'tabler:server',
-      },
-      {
-        title: 'Systemintegration',
-        description:
-          'Nahtlose Integration in bestehende IT-Landschaften und Legacy-Systeme.',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Data Governance',
-        description:
-          'Umfassende Datensicherheit und Compliance gemäß internationaler Standards und Regularien.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Business Intelligence',
-        description:
-          'Fortschrittliche Analysetools für unternehmensweite Datenauswertung und Reporting.',
-        icon: 'tabler:chart-dots',
-      },
-      {
-        title: 'Prozessautomatisierung',
-        description:
-          'Automatisierung komplexer Geschäftsprozesse durch KI und Machine Learning.',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Enterprise Support',
-        description:
-          '24/7 Support und umfassende Service Level Agreements für geschäftskritische Systeme.',
-        icon: 'tabler:headset',
-      },
-    ]}
+  <HeroText
+    tagline="Enterprise Solutions"
+    title="Maßgeschneiderte Lösungen für Großunternehmen"
+    subtitle="Wir unterstützen Großunternehmen bei der digitalen Transformation mit skalierbaren und sicheren Lösungen."
   />
 
-  <!-- Steps Widget ****************** -->
+  <!-- Features2 Widget ************** -->
 
-  <Steps
-    title="Enterprise Implementation"
+  <Features2
+    title="Unsere Enterprise Services"
+    subtitle="Wir bieten umfassende Dienstleistungen für Großunternehmen"
     items={[
       {
-        title: 'Schritt 1: <span class="font-medium">Analyse & Planung</span>',
+        title: 'Enterprise Architektur',
         description:
-          'Umfassende Analyse Ihrer IT-Landschaft und Entwicklung einer maßgeschneiderten Implementierungsstrategie.',
-        icon: 'tabler:search',
+          'Entwicklung einer skalierbaren Architektur und technischen Infrastruktur.',
+        icon: 'tabler:building-arch',
       },
       {
-        title: 'Schritt 2: <span class="font-medium">Architektur & Design</span>',
+        title: 'Digitale Transformation',
         description:
-          'Entwicklung einer skalierbaren Architektur unter Berücksichtigung aller Sicherheits- und Compliance-Anforderungen.',
-        icon: 'tabler:architecture',
+          'Begleitung bei der digitalen Transformation und Modernisierung bestehender Systeme.',
+        icon: 'tabler:refresh',
       },
       {
-        title: 'Schritt 3: <span class="font-medium">Implementierung</span>',
+        title: 'Skalierbare Lösungen',
         description:
-          'Schrittweise Implementierung mit kontinuierlichen Tests und Qualitätssicherung.',
-        icon: 'tabler:code',
+          'Entwicklung hochskalierbarer Anwendungen für unternehmensweite Nutzung.',
+        icon: 'tabler:arrows-maximize',
       },
       {
-        title: 'Schritt 4: <span class="font-medium">Roll-out & Support</span>',
+        title: 'Sicherheit & Compliance',
         description:
-          'Kontrollierter Roll-out und umfassender Support für den laufenden Betrieb.',
-        icon: 'tabler:rocket',
+          'Implementation von Sicherheitsstandards und Compliance-Anforderungen.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'System Integration',
+        description:
+          'Integration verschiedener Systeme und Datenquellen in eine einheitliche Plattform.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'Support & Wartung',
+        description:
+          'Umfassender Support und kontinuierliche Wartung der implementierten Lösungen.',
+        icon: 'tabler:headset',
       },
     ]}
   />
@@ -107,73 +69,110 @@ const metadata = {
 
   <Content
     isReversed
-    title="Enterprise Excellence"
-    subtitle="Maximale Sicherheit und Skalierbarkeit für Ihr Unternehmen"
     items={[
       {
-        title: 'Höchste Sicherheitsstandards',
+        title: 'Skalierbare Architektur',
         description:
-          'Implementierung modernster Sicherheitstechnologien und Compliance-Mechanismen.',
+          'Unsere Enterprise-Lösungen basieren auf einer hochskalierbaren Architektur, die sich an Ihre wachsenden Anforderungen anpasst.',
       },
       {
-        title: 'Globale Skalierbarkeit',
+        title: 'Sichere Integration',
         description:
-          'Weltweit verteilte Systeme mit hoher Verfügbarkeit und optimaler Performance.',
+          'Wir gewährleisten eine sichere Integration in Ihre bestehende IT-Infrastruktur unter Berücksichtigung aller Sicherheitsstandards.',
       },
       {
-        title: 'Vollständige Integration',
+        title: 'Zukunftssicher',
         description:
-          'Nahtlose Einbindung in Ihre bestehende IT-Infrastruktur und Geschäftsprozesse.',
+          'Durch den Einsatz modernster Technologien und Standards entwickeln wir zukunftssichere Lösungen für Ihr Unternehmen.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Enterprise Solutions',
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Enterprise Lösungen',
     }}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Enterprise-grade Lösungen</h3>
+    </Fragment>
+  </Content>
 
-  <!-- FAQs Widget ******************* -->
+  <!-- Content Widget **************** -->
 
-  <FAQs
-    title="Enterprise FAQ"
-    subtitle="Antworten auf wichtige Fragen zu unseren Enterprise-Lösungen"
+  <Content
     items={[
       {
-        title: 'Wie gewährleisten Sie die Sicherheit unserer Daten?',
+        title: 'Expertise',
         description:
-          'Wir setzen auf mehrschichtige Sicherheitskonzepte, regelmäßige Security-Audits und modernste Verschlüsselungstechnologien. Alle Lösungen entsprechen den höchsten Sicherheitsstandards und Compliance-Anforderungen.',
+          'Unser Team verfügt über jahrelange Erfahrung in der Entwicklung von Enterprise-Lösungen.',
       },
       {
-        title: 'Wie erfolgt die Integration in bestehende Systeme?',
+        title: 'Modernste Technologien',
         description:
-          'Unsere Experten analysieren Ihre bestehende IT-Landschaft und entwickeln eine maßgeschneiderte Integrationsstrategie. Durch standardisierte Schnittstellen und moderne Middleware-Lösungen gewährleisten wir eine nahtlose Integration.',
+          'Wir setzen auf bewährte und innovative Technologien für maximale Performance und Skalierbarkeit.',
       },
       {
-        title: 'Welchen Support bieten Sie?',
+        title: 'Agile Entwicklung',
         description:
-          'Wir bieten Enterprise-Support mit garantierten Reaktionszeiten, 24/7 Bereitschaft und persönlichen Ansprechpartnern. Unsere Service Level Agreements können individuell an Ihre Anforderungen angepasst werden.',
+          'Durch agile Entwicklungsmethoden gewährleisten wir schnelle Anpassungen und kontinuierliche Verbesserungen.',
       },
     ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Enterprise Development',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Warum wir?</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Ihr Weg zur digitalen Transformation"
+    items={[
+      {
+        title: 'Analyse',
+        description:
+          'Wir analysieren Ihre bestehenden Systeme und definieren gemeinsam die Anforderungen.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Konzeption',
+        description:
+          'Entwicklung einer maßgeschneiderten Lösung unter Berücksichtigung aller technischen und geschäftlichen Aspekte.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Implementierung',
+        description:
+          'Agile Entwicklung und schrittweise Integration der neuen Lösung in Ihre bestehende Infrastruktur.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Support',
+        description:
+          'Kontinuierliche Betreuung, Wartung und Weiterentwicklung der implementierten Lösung.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Steps Enterprise',
+    }}
   />
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
+    title="Bereit für die digitale Transformation?"
+    subtitle="Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch."
     actions={[
       {
         variant: 'primary',
-        text: 'Enterprise Beratung anfragen',
+        text: 'Kontakt aufnehmen',
         href: '/kontakt',
-        icon: 'tabler:calendar',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Bereit für Enterprise-Grade Lösungen?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Lassen Sie uns gemeinsam Ihre Enterprise-Anforderungen analysieren und die optimale Lösung entwickeln. Vereinbaren Sie jetzt ein Gespräch mit unseren Enterprise-Experten.
-    </Fragment>
-  </CallToAction>
+  />
 </Layout>
