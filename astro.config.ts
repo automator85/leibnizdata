@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import icon from 'astro-icon';
+import icon from "astro-icon";
 
 // Check if we're building for production (GitHub Pages)
 const isProduction = process.env.NODE_ENV === 'production';

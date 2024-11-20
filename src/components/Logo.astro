@@ -1,7 +1,19 @@
 ---
 import { SITE } from '~/config';
+import { Image } from 'astro:assets';
+import defaultImage from '~/assets/images/default.png';
 ---
 
-<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  {SITE.name}
-</span>
+<div class="flex items-center">
+  <Image
+    src={defaultImage}
+    alt={SITE.name}
+    class="w-10 h-10 object-contain"
+    width={40}
+    height={40}
+    loading="eager"
+  />
+  <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+    {SITE.name}
+  </span>
+</div>
